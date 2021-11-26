@@ -1,6 +1,6 @@
 # Sistema Hospitalar G9 
 <h1 align="center">Sistema Hospitalar</h1>
-<h3 align="center">Solução para agendamento de consultas em hospitais.</h3>
+<h3 align="center">Solução para gerenciamento e agendamento de consultas em um hospital</h3>
 
 
 
