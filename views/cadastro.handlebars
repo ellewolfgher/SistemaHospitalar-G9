@@ -1,25 +1,38 @@
 <form action="" method="">
 
-    {{!-- nome, sobrenome, CRM, Nascimento, Dr. ou Dra., email, telefone, especialidade, (API CRM)  --}}
-
     <label for="nome">Nome:</label>
     <input type="text" placeholder="Digite seu nome" name="nome">
 
     <label for="sobrenome">Último nome:</label>
     <input type="text" placeholder="Digite seu último nome" name="sobrenome">
 
-    <label for="email">Email:</label>
-    <input type="email" placeholder="Digite seu email" name="email">
+    <label for="pronome">Pronome:</label>
+    <input type="radio" name="pronome" value="dr">Dr.
+    <input type="radio" name="pronome" value="dra">Dra.
+
+    <label for="crm">CRM:</label>
+    <input type="number" placeholder="Digite seu CRM" name="crm">
 
     <label for="email">Email:</label>
     <input type="email" placeholder="Digite seu email" name="email">
 
-    <label for="email">Email:</label>
-    <input type="email" placeholder="Digite seu email" name="email">
+    <label for="tel">Telefone:</label>
+    <input type="tel" placeholder="(xx)xxxxx-xxxx" name="tel">
 
-    <label for="senha">Senha:</label>
-    <input type="password" placeholder="Digite seu senha" name="senha">
+    <label for="especialidade">Especialidade:</label>
 
+    <label for="espec">Especialidade:</label>
+    <input type="checkbox" name="espec" value="lipo">Lipoaspiração
+    <input type="checkbox" name="espec" value="abdom">Abdominoplastia
+    <input type="checkbox" name="espec" value="masto">Mastopexia
+    <input type="checkbox" name="espec" value="mamo">Mamoplastia
+    <input type="checkbox" name="espec" value="rino">Rinoplastia
+    <input type="checkbox" name="espec" value="gluteo">Gluteoplastia
+    <input type="checkbox" name="espec" value="oto">Otoplastia
+    <input type="checkbox" name="espec" value="ritido">Ritidoplastia
+    <input type="checkbox" name="espec" value="gineco">Ginecomastia
+    <input type="checkbox" name="espec" value="blefaro">Blefaroplastia
+     
     <button type="submit">Logar</button>
     <button type="reset">Cancelar</button>
 </form>
