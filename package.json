@@ -1,0 +1,26 @@
+{
+  "name": "sistemahospitalar-g9",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">Sistema Hospitalar</h1>\r <h3 align=\"center\">Solução para gerenciamento e agendamento de consultas em um hospital</h3>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ellewolfgher/SistemaHospitalar-G9.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ellewolfgher/SistemaHospitalar-G9/issues"
+  },
+  "homepage": "https://github.com/ellewolfgher/SistemaHospitalar-G9#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^6.0.2",
+    "mongodb": "^4.2.0"
+  }
+}
