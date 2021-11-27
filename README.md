@@ -35,8 +35,8 @@ Desafio de HTML, CSS , JAVASCRIPT , JQUERY, BOOTSTRAP, NODEJS, HANDLEBARS e MONG
 - GitHub: [@ellewolfgher](https://github.com/ellewolfgher)
 - GitHub: [@alexsandre-sales](https://github.com/alexsandre-sales)
 - GitHub: [@RodriguesOscar](https://github.com/RodriguesOscar)
-- GitHub: [@](https://github.com/)
+- GitHub: [@EduardoSantos43](https://github.com/EduardoSantos43)
 
 ---
 
-Copyright - 2021 Caio, Gabriela, Rafael, Rodolpho | SoulCode Challenge
+Copyright - 2021 Elle, Alex, Oscar, Eduardo | SoulCode Challenge
