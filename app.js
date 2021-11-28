@@ -38,6 +38,12 @@ app.use(express.json());
 app.use(express.static(__dirname + '/public'));
 
 //********************* Elle *************************/
+app.get('/cadastro', (req, res) => {
+  res.render('cadastro');
+});
+app.post('cadastro', (req, res) => {})
+
+
 
 //********************* Alex *************************/
 app.get('/viewsMedicos', (req, res) => {
