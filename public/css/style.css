@@ -56,3 +56,19 @@ body {
     word-spacing: 15px;
     margin-top: 20px;
 }
+
+.card {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 2px 2px 2px black;
+}
+
+.card-img-top {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 2px 2px 2px black;
+}
+
+/* body {
+  background-color: aqua;
+} */
