@@ -1,41 +1,149 @@
-<form action="" method="">
+<h1 class="text-center mt-3 mb-3">Cadastro de cirurgião</h1>
+<div class="container d-flex justify-content-center align-center">
+    
+    <form action="/cadastro" method="post" id="form-cadastro" class="cont-float shadow-lg">
 
-    <label for="nome">Nome:</label>
-    <input type="text" placeholder="Digite seu nome" name="nome">
+    {{!-- Primeira linha --}}
+    <fieldset class="form-group mt-3">
+        <div class="row">
+            {{!-- Pronome título --}}
+            <legend class="col-form-label col-sm-1 pt-0">Título:</legend>
+            <div class="col-lg-5">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pronome" id="dr" value="dr" checked/>
+                    <label class="form-check-label" for="pronome">Dr.</label>
+                </div>
+                <div class="form-check mt-2">
+                    <input class="form-check-input" type="radio" name="pronome" id="dra" value="dra"/>
+                    <label class="form-check-label" for="dra">Dra.</label>
+                </div>
+            </div>
+            {{!-- Foto perfil --}}
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="profile">Selecione uma foto de perfil:</label>
+                    <input required class="form-control" type="file" class="form-control-file" name="profile" id="profile"/>
+                </div>
+            </div>
+        </div>    
+    </fieldset>
 
-    <label for="sobrenome">Último nome:</label>
-    <input type="text" placeholder="Digite seu último nome" name="sobrenome">
+    {{!-- Segunda linha --}}
+    <div class="row mt-3">
+        {{!-- Nome --}}
+        <div class="col">
+            <label for="nome">Nome:</label>
+            <input required type="text" class="form-control" id="nome" name="nome" minlength="3" placeholder="Nome">
+        </div>
+        {{!-- Sobrenome --}}
+        <div class="col">
+            <label for="sobrenome">Sobrenome:</label>
+            <input required type="text" class="form-control" id="sobrenome" name="sobrenome" minlength="3" placeholder="Sobrenome">
+        </div>
+    </div>
+  
+    {{!-- Terceira linha --}}
+    <div class="row mt-3">
+        {{!-- CPF --}}
+        <div class="col">
+            <div class="form-group mt-3">
+                <label for="cpf">CPF:</label>
+                <input required class="form-control" type="number" placeholder="Digite seu CPF" name="cpf" id="cpf"/>
+            </div>
+        </div>
+        {{!-- CRM --}}
+        <div class="col">
+            <div class="form-group mt-3">
+                <label for="crm">CRM:</label>
+                <input required class="form-control" type="number" placeholder="Digite seu CRM" name="crm" id="crm"/>
+            </div>
+        </div>
+    </div>
 
-    <label for="pronome">Pronome:</label>
-    <input type="radio" name="pronome" value="dr">Dr.
-    <input type="radio" name="pronome" value="dra">Dra.
+    {{!-- Quarta linha --}}
+    <div class="row mt-3">
+        {{!-- Email --}}
+        <div class="col">
+            <div class="form-group mt-3">
+                <label for="email">Email:</label>
+                <input required class="form-control" type="email" placeholder="nome@exemplo.com" name="email" id="email"/>
+            </div>
+        </div>
+        {{!-- Celular --}}
+        <div class="col">
+            <div class="form-group mt-3">
+                <label for="cel">Celular:</label>
+                <input required class="form-control" type="tel" placeholder="(xx)xxxxx-xxxx" name="cel" id="cel"/>
+            </div>
+        </div>
+    </div>
+    
+    {{!-- Quinta linha --}}
+    <div class="row mt-3">
+        {{!-- Telefone --}}
+        <div class="col">
+            <div class="form-group mt-3">
+                <label for="tel">Telefone:</label>
+                <input required class="form-control" type="tel" placeholder="(xx)xxxx-xxxx" name="tel" id="tel"/>
+            </div>
+        </div>
+        {{!-- Ramal --}}
+        <div class="col">
+            <div class="form-group mt-3">
+                <label for="ramal">Ramal:</label>
+                <input required class="form-control" type="number" placeholder="xxx" name="ramal" id="ramal"/>
+            </div>
+        </div>
+    </div>
 
-    <label for="crm">CRM:</label>
-    <input type="number" placeholder="Digite seu CRM" name="crm">
+    {{!-- Sexta linha --}}
+    {{!-- Especialidades --}}
+    <div class="row mt-3 mb-3 ">
+        <div class="form-check">
+            <legend class="col-form-label col-sm-2 pt-0">Especialidade:</legend>
 
-    <label for="email">Email:</label>
-    <input type="email" placeholder="Digite seu email" name="email">
+            <div class="col">
+                <input type="checkbox" name="espec" value="lipo"/>
+                <label class="form-check-label" for="lipo">Lipoaspiração</label>
 
-    <label for="tel">Telefone:</label>
-    <input type="tel" placeholder="(xx)xxxxx-xxxx" name="tel">
+                <input type="checkbox" name="espec" value="abdom"/>
+                <label class="form-check-label" for="abdom">Abdominoplastia</label>
 
-    <label for="ramal">Ramal:</label>
-    <input type="number" placeholder="xxx" name="ramal">
+                <input type="checkbox" name="espec" value="masto"/>
+                <label class="form-check-label" for="masto">Mastopexia</label>
+            </div>
 
-    <label for="especialidade">Especialidade:</label>
+            <div class="col">
+                <input type="checkbox" name="espec" value="mamo"/>
+                <label class="form-check-label" for="mamo">Mamoplastia</label>
 
-    <label for="espec">Especialidade:</label>
-    <input type="checkbox" name="espec" value="lipo">Lipoaspiração
-    <input type="checkbox" name="espec" value="abdom">Abdominoplastia
-    <input type="checkbox" name="espec" value="masto">Mastopexia
-    <input type="checkbox" name="espec" value="mamo">Mamoplastia
-    <input type="checkbox" name="espec" value="rino">Rinoplastia
-    <input type="checkbox" name="espec" value="gluteo">Gluteoplastia
-    <input type="checkbox" name="espec" value="oto">Otoplastia
-    <input type="checkbox" name="espec" value="ritido">Ritidoplastia
-    <input type="checkbox" name="espec" value="gineco">Ginecomastia
-    <input type="checkbox" name="espec" value="blefaro">Blefaroplastia
-     
-    <button type="submit">Logar</button>
-    <button type="reset">Cancelar</button>
-</form>
+                <input type="checkbox" name="espec" value="rino"/>
+                <label class="form-check-label" for="rino">Rinoplastia</label>
+
+                <input type="checkbox" name="espec" value="gluteo"/>
+                <label class="form-check-label" for="gluteo">Gluteoplastia</label>
+            </div>
+
+            <div class="col">
+                <input type="checkbox" name="espec" value="oto"/>
+                <label class="form-check-label" for="oto">Otoplastia</label>
+
+                <input type="checkbox" name="espec" value="gineco"/>
+                <label class="form-check-label" for="gineco">Ginecomastia</label>
+
+                <input type="checkbox" name="espec" value="blefaro"/>
+                <label class="form-check-label" for="blefaro">Blefaroplastia</label>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <button type="reset" class="btn btn-danger">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </div>    
+
+  </form>
+</div>
+
+
+<script type="text/javascript" src="/js/validacao.js"></script>
