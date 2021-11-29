@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+const LocalStorage = require('node-localstorage').LocalStorage;
+localStorage = new LocalStorage('./scratch');
 
 // const client = require('./conn');
 // const dbo = client.db('hospital');
@@ -41,11 +43,13 @@ app.use(express.static(__dirname + '/public'));
 app.get('/cadastro', (req, res) => {
   res.render('cadastro');
 });
-app.post('cadastro', (req, res) => {})
-
-
+app.post('cadastro', (req, res) => {});
 
 //********************* Alex *************************/
+app.get('/', (req, res) => {
+  res.render('home');
+});
+
 app.get('/viewsMedicos', (req, res) => {
   res.render('listaMedicoUsu');
 });
@@ -71,7 +75,7 @@ app.post('/cad', (req, res) => {
 app.post('/login', (req, res) => {
   const emailOK = req.body.email;
   const senhaOK = req.body.senha;
-
+  const aqui = localStorage;
   // validando campo vazio
   if (!emailOK) {
     return res.status(401).send('Informe um email');
@@ -79,38 +83,29 @@ app.post('/login', (req, res) => {
   if (!senhaOK) {
     return res.status(401).send('Informe a senha');
   }
-
   // validando campo preenchido
   //pesuisa no BD
-  console.log(emailOK);
   db.collection('usuario').findOne({ email: emailOK }, (err, resEmail) => {
-    // console.log(usuario);
-    if (!resEmail) {
-      console.log(resEmail);
+    if (err) {
+      console.log('Algum erro ' + err);
+    }
+    if (resEmail == null) {
       return res.status(400).send('Email ou senha invalida');
     }
+    if (resEmail.email == 'a@adm.com' && resEmail.senha == 1234) {
+      console.log(perfil);
+      return res.status(200).send('vc e adm');
+      //redireciona para os cards full
+    }
+    if (resEmail.email == 'u@adm.com' && resEmail.senha == 789) {
+      localStorage.setItem('perfilLogado', emailOK);
+      console.log(localStorage);
+      res.redirect('/viewsMedicos');
+      // redireciona para card simples
+    }
   });
-  // db.collection('usuario').findOne({ senha: senhaOK }, (err, resSenha) => {
-  //   if (!resSenha) {
-  //     return res.status(400).send('Email ou senha invalida');
-  //   }
-  // });
-
-  // validando usurios igual do BD
-  //pesuisa no BD
-  // const usuario = bd...findOne({ email: adm@hospital.com})
-  // const senha = bd...findOne({ senha: 12345})
-  // if (usuario == 'a@adm.com' && senha == 1234) {
-  //   res.redirect('/listaMedicoUsu');
-  // }
-  // validando usuario comum
-  //pesuisa no BD
-  // const usuario = bd...findOne({ email: func@hospital.com})
-  // const senha = bd...findOne({ senha: 78910})
-  // if (usuario == 'func@hospital.com' && senha == 78910) {
-  //   res.render('listaMedicoADM');
-  // }
 });
+// Do Alex(eu), ainda vou apagar ***********************************************************************************
 
 //********************* Oscar *************************/
 
