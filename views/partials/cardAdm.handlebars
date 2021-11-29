@@ -1,68 +1,72 @@
-    {{!-- Botão para cadastrar novo médico --}}
-    <div class="container mb-5 text-center">
-        <a href="#" class="btn btn-success btn-lg">Cadastrar novo médico</a>
-    </div>
-    {{!-- Barra de pesquisa por nome de médico --}}
-    <div class="container mb-5 text-center">
-        <form action="#" method="#" class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2 mb-2" type="search" placeholder="pesquisar por médico" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-        </form>
-    </div>
-    {{!-- Filtro por especialidades após ter o nome do médico --}}
-    <form action="#" method="#" class="container text-center mb-5">
-        <h2 class="text-center">
-            Filtar por especialidade
-        </h2>
-        <div class="row mt-3">
-            <div class="form-check col-lg-4">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="option1">
-                <label class="form-check-label" for="inlineCheckbox1">Lipoaspiração</label>
-            </div>
-            <div class="form-check col-lg-4">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="option2">
-                <label class="form-check-label" for="inlineCheckbox2">Abdominoplastia</label>
-            </div>
-            <div class="form-check col-lg-4">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name="option3">
-                <label class="form-check-label" for="inlineCheckbox1">Mastopexia</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="form-check col-lg-4">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox4" name="option4">
-                <label class="form-check-label" for="inlineCheckbox2">Mamoplastia</label>
-            </div>
-            <div class="form-check  col-lg-4">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox5" name="option5">
-                <label class="form-check-label" for="inlineCheckbox1">Rinoplastia</label>
-            </div>
-            <div class="form-check col-lg-4">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox6" name="option6">
-                <label class="form-check-label" for="inlineCheckbox2">Gluteoplastia</label>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="form-check col-lg-4">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox7" name="option7">
-                <label class="form-check-label" for="inlineCheckbox1">Otoplastia</label>
-            </div>
-            <div class="form-check col-lg-4">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox8" name="option8">
-                <label class="form-check-label" for="inlineCheckbox1">Ginecomastia</label>
-            </div>
-            <div class="form-check col-lg-4">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox9" name="option9">
-                <label class="form-check-label" for="inlineCheckbox2">Blefaroplastia</label>
-            </div>
-        </div>
-        <div>
-            <button class="btn btn-outline-success my-2 my-sm-0" type="reset">Limpar</button>
-        </div>
+{{!-- Botão para cadastrar novo médico --}}
+<div class="container mb-5 text-center">
+    <a href="#" class="btn btn-success btn-lg">Cadastrar novo médico</a>
+</div>
+{{!-- Barra de pesquisa por nome de médico --}}
+<div class="container mb-5 text-center">
+    <form action="#" method="#" class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2 mb-2" type="search" placeholder="pesquisar por médico" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
     </form>
-    {{!-- Cards do administrador --}}
-    <div class="container">
-        <div class="card mb-3" style="max-width: 540px;">
+</div>
+{{!-- Filtro por especialidades após ter o nome do médico --}}
+<form action="#" method="#" class="container text-center mb-5">
+    <h2 class="text-center">
+        Filtrar por especialidade
+    </h2>
+    <div class="row mt-3 justify-content-center">
+        <div class="form-check col-lg-2">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="option1">
+            <label class="form-check-label" for="inlineCheckbox1">Lipoaspiração</label>
+        </div>
+        <div class="form-check col-lg-2">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="option2">
+            <label class="form-check-label" for="inlineCheckbox2">Abdominoplastia</label>
+        </div>
+        <div class="form-check col-lg-2">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name="option3">
+            <label class="form-check-label" for="inlineCheckbox1">Mastopexia</label>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="form-check col-lg-2">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox4" name="option4">
+            <label class="form-check-label" for="inlineCheckbox2">Mamoplastia</label>
+        </div>
+        <div class="form-check  col-lg-2">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox5" name="option5">
+            <label class="form-check-label" for="inlineCheckbox1">Rinoplastia</label>
+        </div>
+        <div class="form-check col-lg-2">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox6" name="option6">
+            <label class="form-check-label" for="inlineCheckbox2">Gluteoplastia</label>
+        </div>
+    </div>
+    <div class="row mb-3 justify-content-center">
+        <div class="form-check col-lg-2">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox7" name="option7">
+            <label class="form-check-label" for="inlineCheckbox1">Otoplastia</label>
+        </div>
+        <div class="form-check col-lg-2">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox8" name="option8">
+            <label class="form-check-label" for="inlineCheckbox1">Ginecomastia</label>
+        </div>
+        <div class="form-check col-lg-2">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox9" name="option9">
+            <label class="form-check-label" for="inlineCheckbox2">Blefaroplastia</label>
+        </div>
+    </div>
+    <div>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="reset">Limpar</button>
+    </div>
+</form>
+{{!-- Cartões que recebem os dados cadastrados pelo administrador --}}
+<div class="container-fluid d-flex">
+    {{!-- linha no formulário --}}
+    <div class="row">
+        <div class="card mb-3 mx-5" style="max-width: 540px;">
+            {{#each medicoColecao}}
+            {{!-- linha no cartão --}}
             <div class="row no-gutters">
                 <div class="col-md-4">
                     <img src="img/{{foto}}" class="card-img pt-md-5 pt-lg-5" alt="Foto do médico">
@@ -71,7 +75,7 @@
                     <div class="card-body">
                         <h3 class="card-title text-center">Informações</h3>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Nome: {{}},{{}},{{}}</li>
+                            <li class="list-group-item">Nome: {{}}{{}}{{}}</li>
                             <li class="list-group-item">Nº de matrícula:: {{}}</li>
                             <li class="list-group-item">CRM: {{}}</li>
                             <li class="list-group-item">E-mail: {{}}</li>
@@ -81,16 +85,18 @@
                         </ul>
                     </div>
                     <div class="container text-center mb-3">
-                        <a href="#" class="btn btn-success border-light btn-md mx-4">
+                        <a href="rota para editar" class="btn btn-success border-light btn-md mx-3">
                             <i class="bi bi-pen-fill"></i>
                             Editar
                         </a>
-                        <a href="#" class="btn btn-danger border-light btn-md mx-4">
+                        <a href="rota para excluir" class="btn btn-danger border-light btn-md mx-3">
                             <i class="bi bi-trash-fill"></i>
                             Eliminar
                         </a>
                     </div>
                 </div>
+                {{/each}}
             </div>
         </div>
     </div>
+</div>
