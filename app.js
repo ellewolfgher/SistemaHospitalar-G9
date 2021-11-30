@@ -78,7 +78,32 @@ if(req.body.'id do botão de cadastro' == ""){
   res.redirect('mandar pros cards adm')
 }
 
+// rota cadastro medico
+
+app.get('rota cadastro',(req,res)=>{
+  res.render('pagina de cadastro')
+})
+
+app.post('/add',(req,res)=>{
+  const obj ={nome:req.body.nome,
+              sobrenome:req.body.sobrenome,
+              cpf:req.body.cpf,
+              crm:req.body.crm,
+              email:req.body.email,
+              cel:req.body.cel,
+              tel:req.body.tel,
+              ramal:req.body.ramal,
+              especialidade:req.body.espec,
+              }
+  dbo.collection('collection de medicos').insertOne(obj,(err,result)=>{
+      if(err)throw err
+      res.redirect("cadastro medico")
+  })
+})
+
+
 */
+
 //********************* Eduardo *************************/
 
 app.listen(port, () => {
