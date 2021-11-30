@@ -6,23 +6,6 @@ const app = express();
 
 const port = 7000;
 
-// meu banco **************************************************************************
-const mongodb = require('mongodb').MongoClient;
-
-const url =
-  'mongodb+srv://lex:1234@cluster0.i8hxd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-
-const client = new mongodb(url);
-
-try {
-  client.connect();
-  console.log('BD atlas on');
-} catch (error) {
-  console.log('BD atlas off ' + error);
-}
-
-const db = client.db('teste');
-//***************************************************************************************/
 
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({
