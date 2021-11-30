@@ -63,3 +63,7 @@ body {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
+.imgHome {
+  width: 100%;
+  height: calc(100vh - 80px);
+}

@@ -1,7 +1,5 @@
 const express = require('express');
 const app = express();
-const LocalStorage = require('node-localstorage').LocalStorage;
-localStorage = new LocalStorage('./scratch');
 
 // const client = require('./conn');
 // const dbo = client.db('hospital');
@@ -75,7 +73,6 @@ app.post('/cad', (req, res) => {
 app.post('/login', (req, res) => {
   const emailOK = req.body.email;
   const senhaOK = req.body.senha;
-  const aqui = localStorage;
   // validando campo vazio
   if (!emailOK) {
     return res.status(401).send('Informe um email');
@@ -93,14 +90,15 @@ app.post('/login', (req, res) => {
       return res.status(400).send('Email ou senha invalida');
     }
     if (resEmail.email == 'a@adm.com' && resEmail.senha == 1234) {
-      console.log(perfil);
+      let user = 'Administrador';
       return res.status(200).send('vc e adm');
+      //user sem local definido ainda....
       //redireciona para os cards full
     }
     if (resEmail.email == 'u@adm.com' && resEmail.senha == 789) {
-      localStorage.setItem('perfilLogado', emailOK);
-      console.log(localStorage);
-      res.redirect('/viewsMedicos');
+      let user = 'Interno';
+      res.redirect('/viewsMedicos', { user });
+      //user sem local definido ainda.....
       // redireciona para card simples
     }
   });
