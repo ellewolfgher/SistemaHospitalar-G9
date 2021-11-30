@@ -1,0 +1,156 @@
+<div class="container mb-5 mt-5 text-center">
+{{!-- Barra de pesquisa por nome de médico --}}
+  <form action="#" method="#" class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2 mb-2" type="search" placeholder="Pesquisar por médico" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0 " type="submit">Pesquisar</button>
+  </form>
+{{!-- Filtro por especialidades após ter o nome do médico --}}
+  <form action="#" method="#" class="container text-center mb-5 mt-5">
+    <h2 class="text-center">
+        Filtrar por especialidade
+    </h2>
+    <div class="row mt-3 justify-content-center">
+      <div class="form-check col-lg-2">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="option1">
+        <label class="form-check-label" for="inlineCheckbox1">Lipoaspiração</label>
+      </div>
+      <div class="form-check col-lg-2">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="option2">
+        <label class="form-check-label" for="inlineCheckbox2">Abdominoplastia</label>
+      </div>
+      <div class="form-check col-lg-2">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name="option3">
+        <label class="form-check-label" for="inlineCheckbox1">Mastopexia</label>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="form-check col-lg-2">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" name="option4">
+        <label class="form-check-label" for="inlineCheckbox2">Mamoplastia</label>
+      </div>
+      <div class="form-check  col-lg-2">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox5" name="option5">
+        <label class="form-check-label" for="inlineCheckbox1">Rinoplastia</label>
+      </div>
+      <div class="form-check col-lg-2">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox6" name="option6">
+        <label class="form-check-label" for="inlineCheckbox2">Gluteoplastia</label>
+      </div>
+    </div>
+    <div class="row mb-3 justify-content-center">
+      <div class="form-check col-lg-2">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox7" name="option7">
+        <label class="form-check-label" for="inlineCheckbox1">Otoplastia</label>
+      </div>
+      <div class="form-check col-lg-2">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox8" name="option8">
+        <label class="form-check-label" for="inlineCheckbox1">Ginecomastia</label>
+      </div>
+      <div class="form-check col-lg-2">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox9" name="option9">
+        <label class="form-check-label" for="inlineCheckbox2">Blefaroplastia</label>
+      </div>
+    </div>
+    <div>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="reset">Limpar</button>
+    </div>
+  </form>
+
+  <h1 class='text-center mt-4'>...Medicos</h1>
+  <div class="row ">
+    {{!-- Principal --}}
+          {{!-- aqui vai o for --}}
+    <div class="col-lg-3 col-md-6 col-sm-6 d-flex justify-content-center " >
+      <div class="card mt-5 shadow" style="width: 20rem">
+        {{!-- <img src="public/img/..." class="card-img-top" /> --}}
+        <img src="https://placebear.com/300/300" class="card-img-top" />
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Nome:{{ponome }},{{nome}},{{sobrenome}}</li>
+          <li class="list-group-item">Ramal:{{ramal}}</li>
+          <li class="list-group-item">Email:{{email}}</li>
+          <li class="list-group-item">Especialidade:{{espc}}</li>
+        </ul>
+      </div>
+    </div>
+          {{!-- fechamento do for --}}
+    {{!-- fim da principal --}}
+          <div class="col-lg-3 col-md-6 col-sm-6 d-flex justify-content-center">
+            <div class="card mt-5" style="width: 20rem">
+              {{!-- <img src="public/img/..." class="card-img-top" /> --}}
+              <img src="https://placebear.com/300/300" class="card-img-top" />
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Nome:{{ponome }},{{nome}},{{sobrenome}}</li>
+                <li class="list-group-item">Ramal:{{ramal}}</li>
+                <li class="list-group-item">Email:{{email}}</li>
+                <li class="list-group-item">Especialidade:{{espc}}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 d-flex justify-content-center">
+            <div class="card mt-5" style="width: 20rem">
+              {{!-- <img src="public/img/..." class="card-img-top" /> --}}
+              <img src="https://placebear.com/300/300" class="card-img-top" />
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Nome:{{ponome }},{{nome}},{{sobrenome}}</li>
+                <li class="list-group-item">Ramal:{{ramal}}</li>
+                <li class="list-group-item">Email:{{email}}</li>
+                <li class="list-group-item">Especialidade:{{espc}}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 d-flex justify-content-center">
+            <div class="card mt-5" style="width: 20rem">
+              {{!-- <img src="public/img/..." class="card-img-top" /> --}}
+              <img src="https://placebear.com/300/300" class="card-img-top" />
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Nome:{{ponome }},{{nome}},{{sobrenome}}</li>
+                <li class="list-group-item">Ramal:{{ramal}}</li>
+                <li class="list-group-item">Email:{{email}}</li>
+                <li class="list-group-item">Especialidade:{{espc}}</li>
+              </ul>
+            </div>
+          </div>
+  </div>
+  <div class="row ">
+    {{!-- Principal --}}
+          {{!-- aqui vai o for --}}
+          <div class="col-lg-4 col-md-4 col-sm-6 d-flex justify-content-center " >
+            <div class="card mt-5" style="width: 20rem">
+              {{!-- <img src="public/img/..." class="card-img-top" /> --}}
+              <img src="https://placebear.com/300/300" class="card-img-top" />
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Nome:{{ponome }},{{nome}},{{sobrenome}}</li>
+                <li class="list-group-item">Ramal:{{ramal}}</li>
+                <li class="list-group-item">Email:{{email}}</li>
+                <li class="list-group-item">Especialidade:{{espc}}</li>
+              </ul>
+            </div>
+          </div>
+          {{!-- fechamento do for --}}
+    {{!-- fim da principal --}}
+          <div class="col-lg-4 col-md-4 col-sm-6 d-flex justify-content-center">
+            <div class="card mt-5" style="width: 20rem">
+              {{!-- <img src="public/img/..." class="card-img-top" /> --}}
+              <img src="https://placebear.com/300/300" class="card-img-top" />
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Nome:{{ponome }},{{nome}},{{sobrenome}}</li>
+                <li class="list-group-item">Ramal:{{ramal}}</li>
+                <li class="list-group-item">Email:{{email}}</li>
+                <li class="list-group-item">Especialidade:{{espc}}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-6 d-flex justify-content-center">
+            <div class="card mt-5" style="width: 20rem">
+              {{!-- <img src="public/img/..." class="card-img-top" /> --}}
+              <img src="https://placebear.com/300/300" class="card-img-top" />
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Nome:{{ponome }},{{nome}},{{sobrenome}}</li>
+                <li class="list-group-item">Ramal:{{ramal}}</li>
+                <li class="list-group-item">Email:{{email}}</li>
+                <li class="list-group-item">Especialidade:{{espc}}</li>
+              </ul>
+            </div>
+          </div>
+  </div>
+</div>

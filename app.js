@@ -1,10 +1,11 @@
 const express = require('express');
 const app = express();
 
-const client = require('./conn');
-const dbo = client.db('hospital');
+// const client = require('./conn');
+// const dbo = client.db('hospital');
 
 const port = 7000;
+
 
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({
@@ -23,15 +24,69 @@ app.use(express.static(__dirname + '/public'));
 app.get('/cadastro', (req, res) => {
   res.render('cadastro');
 });
-app.post('cadastro', (req, res) => {})
-
-
+app.post('cadastro', (req, res) => {});
 
 //********************* Alex *************************/
-app.get('/viewsMedicos', (req, res) => {
-  res.render('lista');
+app.get('/', (req, res) => {
+  res.render('home');
 });
-app.post('/addMedico', (req, res) => {});
+
+app.get('/viewsMedicos', (req, res) => {
+  res.render('listaMedicoUsu');
+});
+app.get('/login', (req, res) => {
+  res.render('login');
+});
+
+//meu teste **r**********************************************************************************************
+app.post('/cad', (req, res) => {
+  let cardU = {
+    email: req.body.email,
+    senha: req.body.senha
+  };
+  db.collection('usuario').insertOne(cardU, (err, result) => {
+    if (err) {
+      return res.status(400).send('erro ao cadastrar');
+    }
+    res.redirect('/login');
+  });
+});
+//fim do teste ************************************************************************************************
+
+app.post('/login', (req, res) => {
+  const emailOK = req.body.email;
+  const senhaOK = req.body.senha;
+  // validando campo vazio
+  if (!emailOK) {
+    return res.status(401).send('Informe um email');
+  }
+  if (!senhaOK) {
+    return res.status(401).send('Informe a senha');
+  }
+  // validando campo preenchido
+  //pesuisa no BD
+  db.collection('usuario').findOne({ email: emailOK }, (err, resEmail) => {
+    if (err) {
+      console.log('Algum erro ' + err);
+    }
+    if (resEmail == null) {
+      return res.status(400).send('Email ou senha invalida');
+    }
+    if (resEmail.email == 'a@adm.com' && resEmail.senha == 1234) {
+      let user = 'Administrador';
+      return res.status(200).send('vc e adm');
+      //user sem local definido ainda....
+      //redireciona para os cards full
+    }
+    if (resEmail.email == 'u@adm.com' && resEmail.senha == 789) {
+      let user = 'Interno';
+      res.redirect('/viewsMedicos', { user });
+      //user sem local definido ainda.....
+      // redireciona para card simples
+    }
+  });
+});
+// Do Alex(eu), ainda vou apagar ***********************************************************************************
 
 //********************* Oscar *************************/
 
