@@ -7,7 +7,6 @@ const routerLogin = require('./routes/login-router');
 
 const port = 7000;
 
-
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({
   partialsDir: 'views/partials/'
@@ -36,9 +35,6 @@ app.use('/auth', routerLogin);
 
 app.get('/viewsMedicos', (req, res) => {
   res.render('listaMedicoUsu');
-});
-app.get('/login', (req, res) => {
-  res.render('login');
 });
 
 //meu teste **r**********************************************************************************************
