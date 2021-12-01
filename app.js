@@ -7,23 +7,6 @@ const routerLogin = require('./routes/login-router');
 
 const port = 7000;
 
-// meu banco **************************************************************************
-const mongodb = require('mongodb').MongoClient;
-
-const url =
-  'mongodb+srv://lex:1234@cluster0.i8hxd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-
-const client = new mongodb(url);
-
-try {
-  client.connect();
-  console.log('BD atlas on');
-} catch (error) {
-  console.log('BD atlas off ' + error);
-}
-
-const db = client.db('teste');
-//***************************************************************************************/
 
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({
@@ -153,7 +136,32 @@ if(req.body.'id do botão de cadastro' == ""){
   res.redirect('mandar pros cards adm')
 }
 
+// rota cadastro medico
+
+app.get('rota cadastro',(req,res)=>{
+  res.render('pagina de cadastro')
+})
+
+app.post('/add',(req,res)=>{
+  const obj ={nome:req.body.nome,
+              sobrenome:req.body.sobrenome,
+              cpf:req.body.cpf,
+              crm:req.body.crm,
+              email:req.body.email,
+              cel:req.body.cel,
+              tel:req.body.tel,
+              ramal:req.body.ramal,
+              especialidade:req.body.espec,
+              }
+  dbo.collection('collection de medicos').insertOne(obj,(err,result)=>{
+      if(err)throw err
+      res.redirect("cadastro medico")
+  })
+})
+
+
 */
+
 //********************* Eduardo *************************/
 
 app.listen(port, () => {
