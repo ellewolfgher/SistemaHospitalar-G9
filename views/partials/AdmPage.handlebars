@@ -1,0 +1,101 @@
+<!-- Botão de voltar e título da página -->
+<div>
+    <a href="/" class="btn btn-lg">
+        <p>Voltar</p>
+    </a>
+</div>
+<div class="h1 text-center mb-5">Página do administrador</div>
+<!-- Botão de cadastro de novos médicos-->
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-12 d-flex flex-wrap justify-content-center">
+            <a href="/cadastro" class="btn btn-primary mx-4">Cadastrar novo médico</a>
+            <!-- Barra de pesquisa -->
+            <input class="border border-success rounded mx-4" type="text" id="input-pesquisa"
+                onkeyup="pesquisarMedico()" placeholder="Pesquisar por médico">
+        </div>
+    </div>
+</div>
+<!-- Filtro por especialidade -->
+<div class="container-fluid d-flex flex-wrap justify-content-center mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-check form-switch mx-2">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Lipoaspiração</label>
+            </div>
+            <div class="form-check form-switch mx-2">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Abdominoplastia</label>
+            </div>
+            <div class="form-check form-switch mx-2">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Mastopexia</label>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-check form-switch mx-2">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Mamoplastia</label>
+            </div>
+            <div class="form-check form-switch mx-2">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Rinoplastia</label>
+            </div>
+            <div class="form-check form-switch mx-2">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Gluteoplastia</label>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-check form-switch mx-2">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Otoplastia</label>
+            </div>
+            <div class="form-check form-switch mx-2">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Ginecomastia</label>
+            </div>
+            <div class="form-check form-switch mx-2">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Blefaroplastia</label>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Cartões -->
+<div id="card-container" class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            <div id="card-conteudo" class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <p class="col-md-6">
+                        <img src="img/{{}}" class="img-fluid rounded-start" alt="...">
+                    </p>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <p id="medico" class="h4 card-title text-center">{{}}{{}}{{}}</p>
+                            <p class="card-text">CRM: {{}}</p>
+                            <p class="card-text">E-mail: {{}}</p>
+                            <p class="card-text">Telefone: {{}}</p>
+                            <p class="card-text">Ramal: {{}}</p>
+                            <p class="card-text">Especialidades: {{}}</p>
+                            <p class="container-fluid d-flex justify-content-between">
+                                <a href="rota para excluir" class="btn btn-danger">
+                                    <i class="bi bi-trash-fill"></i>
+                                    Eliminar
+                                </a>
+                                <a href="rota para editar" class="btn btn-success">
+                                    <i class="bi bi-pen-fill"></i>
+                                    Editar
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/js/pesqMedicos.js"></script>
