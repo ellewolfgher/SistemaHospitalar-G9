@@ -1,12 +1,9 @@
 const express = require('express');
 const app = express();
 const routerLogin = require('./routes/login-router');
-
-// const client = require('./conn');
-// const dbo = client.db('hospital');
-
+const client = require('./conn');
+const dbo = client.db('hospital');
 const port = 7000;
-
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({
   partialsDir: 'views/partials/'
@@ -14,10 +11,8 @@ const hbs = exphbs.create({
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
 app.use(express.static(__dirname + '/public'));
 
 //********************* Elle *************************/
@@ -31,7 +26,7 @@ app.get('/', (req, res) => {
   res.render('home');
 });
 
-app.use('/auth', routerLogin);
+app.use('/login', routerLogin);
 
 app.get('/viewsMedicos', (req, res) => {
   res.render('listaMedicoUsu');
@@ -43,7 +38,7 @@ app.post('/cad', (req, res) => {
     email: req.body.email,
     senha: req.body.senha
   };
-  db.collection('usuario').insertOne(cardU, (err, result) => {
+  dbo.collection('usuario').insertOne(cardU, (err, result) => {
     if (err) {
       return res.status(400).send('erro ao cadastrar');
     }
