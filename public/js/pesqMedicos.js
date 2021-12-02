@@ -9,7 +9,7 @@ function pesquisarMedico() {
 
   for (i = 0; i < conteudo.length; i++) {
 
-    nomeMedico = conteudo[i].getElementById("medico")[0];
+    nomeMedico = conteudo[i].getElementsByClassName("medicoEspec")[0];
 
     if (nomeMedico) {
 
