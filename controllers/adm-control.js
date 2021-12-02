@@ -1,4 +1,4 @@
-//chamada do modelo do usuario quando estiver prnto
+//chamada do modelo do usuario quando estiver pronto
 
 exports.list_medico = (req, res) => {
   oBancoVaiAqui.find({}, (err, resultado) => {
@@ -12,10 +12,11 @@ exports.list_medico = (req, res) => {
 exports.lista_medico_cad = (req, res) => {
   res.render('cadastro');
 };
+
 exports.cad_medico_lista = (req, res) => {
   const save_medico = new oBancoVaiAqui();
   save_medico.nome = req.body.nome;
-  // lista do caard
+  // lista do card
 
   save_medico.save(err => {
     if (err) {
