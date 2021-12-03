@@ -2,8 +2,10 @@ const express = require('express');
 const app = express();
 const routerLogin = require('./routes/login-router');
 
-// const client = require('./conn');
-// const dbo = client.db('hospital');
+const client = require('./conn');
+client()
+
+const dbo = client.db('hospital');
 
 const port = 7000;
 
@@ -17,14 +19,54 @@ app.set('view engine', 'handlebars');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
 app.use(express.static(__dirname + '/public'));
 
-//********************* Elle *************************/
+//renderização das páginas
+
+// app.get('/home', (req, res) => {
+//   res.render('hospitalGlowUp')
+// })
+
+// app.get('/login', (req, res) => {
+//   res.render('login')
+// })
+
 app.get('/cadastro', (req, res) => {
-  res.render('cadastro');
-});
-app.post('cadastro', (req, res) => {});
+  res.render('cadastroMedico')
+})
+
+app.post('/adicionar',(req,res) => {
+
+  const obj ={pronome: req.body.pronome,
+              foto:req.body.profile,
+              nome:req.body.nome,
+              sobrenome:req.body.sobrenome,
+              crm:req.body.crm,
+              email:req.body.email,
+              cel:req.body.cel,
+              tel:req.body.tel,
+              ramal:req.body.ramal,
+              especialidades:req.body.espec,
+              }
+  dbo.collection('medicos').insertOne(obj,(erro,resultado)=>{
+      if(erro)throw erro
+      console.log('Médico cadastrado!')
+      res.redirect("/cadastro")
+  })
+})
+
+app.get('/cadastro',(req,res)=>{
+  dbo.collection('medicos').find({}).toArray((erro, resultado)=>{
+      if(erro)throw erro
+      res.render('medicosCadastrados',{resultado})
+  })
+})
+
+//********************* Elle *************************/
+// app.get('/cadastro', (req, res) => {
+//   res.render('cadastro');
+// });
+
 
 //********************* Alex *************************/
 app.get('/', (req, res) => {
@@ -93,7 +135,7 @@ app.post('/cad', (req, res) => {
 
 // rota para eliminar o cadastro do médico
 
-app.get('rota para eliminar (chamar ID)', (req, res)=>{
+app.get('/eliminarCadastro/{{_id}}', (req, res)=>{
   const idFunc =req.params.id
   const obj_id = new ObjectId(idFunc)
   dbo.collection('chamar collection de medicos').deleteOne({_id: obj_id}, (err, result)=>
@@ -161,5 +203,5 @@ app.post('/add',(req,res)=>{
 //********************* Eduardo *************************/
 
 app.listen(port, () => {
-  console.log('servidor rodando');
+  console.log(`servidor rodando na porta ${port}`);
 });

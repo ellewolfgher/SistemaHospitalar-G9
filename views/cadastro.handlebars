@@ -45,12 +45,12 @@
     {{!-- Terceira linha --}}
     <div class="row mt-3">
         {{!-- CPF --}}
-        <div class="col">
+        {{!-- <div class="col">
             <div class="form-group mt-3">
                 <label for="cpf">CPF:</label>
                 <input required class="form-control" type="number" placeholder="Digite seu CPF" name="cpf" id="cpf"/>
             </div>
-        </div>
+        </div> --}}
         {{!-- CRM --}}
         <div class="col">
             <div class="form-group mt-3">
@@ -138,8 +138,8 @@
     </div>
 
     <div>
-        <button type="reset" class="btn btn-danger">Cancelar</button>
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
+        <button id="cancel-cadastro" type="reset" class="btn btn-danger">Cancelar</button>
+        <button id="submit-cadastro" type="submit" class="btn btn-primary">Cadastrar</button>
     </div>    
 
   </form>
