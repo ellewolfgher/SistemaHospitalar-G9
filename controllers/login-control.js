@@ -20,11 +20,11 @@ exports.validLogin = (req, res) => {
     if (emailValid == null) {
       return res.status(400).send('Email ou senha errado/não confere');
     }
-    if (emailValid.email == 'a@Admin.com' && emailValid.senha == 1234) {
+    if (emailValid.email == 'adm@glowup.com' && emailValid.senha == 1234) {
       return res.status(200).send('Logado como ADM');
     }
-    if (emailValid.email == 'u@Admin.com' && emailValid.senha == 789) {
-      res.redirect('/views/partials/listaMedicoUsu');
+    if (emailValid.email == 'user@glowup.com' && emailValid.senha == 789) {
+      return res.status(200).send('Logado como usuario comum');
     }
   });
 };

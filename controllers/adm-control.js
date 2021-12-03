@@ -27,7 +27,6 @@ exports.cadastrarMedico = (req, res) => {
   // save_medico.profile = req.body.profile;
   save_medico.nome = req.body.nome;
   save_medico.sobrenome = req.body.sobrenome;
-  // save_medico.cpf = req.body.cpf;
   // save_medico.crm = req.body.crm;
   // save_medico.email = req.body.email;
   // save_medico.cel = req.body.cel;
