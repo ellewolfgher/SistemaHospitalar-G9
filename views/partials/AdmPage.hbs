@@ -1,6 +1,6 @@
 <!-- Botão de voltar e título da página -->
 <div>
-    <a href="/" class="btn btn-lg">
+    <a href="/home" class="btn btn-lg">
         <p>Voltar</p>
     </a>
 </div>
@@ -20,6 +20,7 @@
 <div id="card-container" class="container mt-5 mb-5">
     <div class="row">
         <div class="col-sm-12 col-md-6">
+            {{#each resultado}}
             <div id="card-conteudo" class="card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
                     <p class="col-md-6">
@@ -27,7 +28,7 @@
                     </p>
                     <div class="col-md-6">
                         <div class="card-body">
-                            <p class=" medicoEspec h4 card-title text-center">{{pronome}}{{nome}}{{sobrenome}}</p>
+                            <p class=" medicoEspec h4 card-title text-center">{{this.pronome}}>{{this.nome}}>{{this.sobrenome}}</p>
                             <p class="card-text">CRM: {{crm}}</p>
                             <p class="card-text">E-mail: {{email}}</p>
                             <p class="card-text">Celular: {{cel}}</p>
@@ -35,11 +36,11 @@
                             <p class="card-text">Ramal: {{ramal}}</p>
                             <p class="medicoEspec card-text">Especialidades: {{espec}}</p>
                             <p class="container-fluid d-flex justify-content-between">
-                                <a href="rota para excluir" class="btn btn-danger">
+                                <a href="/eliminarCadastro/{{_id}}" class="btn btn-danger">
                                     <i class="bi bi-trash-fill"></i>
                                     Eliminar
                                 </a>
-                                <a href="rota para editar" class="btn btn-success">
+                                <a href="/editarCadastro/{{_id}}" class="btn btn-success">
                                     <i class="bi bi-pen-fill"></i>
                                     Editar
                                 </a>
@@ -48,6 +49,7 @@
                     </div>
                 </div>
             </div>
+            {{/each}}
         </div>
     </div>
 </div>

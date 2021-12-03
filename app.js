@@ -87,7 +87,7 @@ app.get('/viewsMedicos', (req, res) => {
 
 // rota para eliminar o cadastro do médico
 
-app.get('rota para eliminar (chamar ID)', (req, res)=>{
+app.get('/eliminarCadastro/{{_id}}', (req, res)=>{
   const idFunc =req.params.id
   const obj_id = new ObjectId(idFunc)
   dbo.collection('chamar collection de medicos').deleteOne({_id: obj_id}, (err, result)=>
@@ -155,5 +155,5 @@ app.post('/add',(req,res)=>{
 //********************* Eduardo *************************/
 
 app.listen(port, () => {
-  console.log('servidor rodando');
+  console.log(`servidor rodando na porta ${port}`);
 });
