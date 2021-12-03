@@ -1,8 +1,7 @@
 const express = require('express');
 const app = express();
 const routerLogin = require('./routes/login-router');
-const client = require('./conn');
-const dbo = client.db('hospital');
+const routerCadastro = require('./routes/adm-router');
 const port = 7000;
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({
@@ -16,16 +15,16 @@ app.use(express.json());
 app.use(express.static(__dirname + '/public'));
 
 //********************* Elle *************************/
-app.get('/cadastro', (req, res) => {
-  res.render('cadastro');
-});
-app.post('cadastro', (req, res) => {});
+// app.get('/cadastro', (req, res) => {
+//   res.render('cadastro');
+// });
+// app.post('cadastro', (req, res) => {});
 
 //********************* Alex *************************/
 app.get('/', (req, res) => {
   res.render('home');
 });
-
+app.use('/cadastro', routerCadastro);
 app.use('/login', routerLogin);
 
 app.get('/viewsMedicos', (req, res) => {
@@ -33,18 +32,18 @@ app.get('/viewsMedicos', (req, res) => {
 });
 
 //meu teste **r**********************************************************************************************
-app.post('/cad', (req, res) => {
-  let cardU = {
-    email: req.body.email,
-    senha: req.body.senha
-  };
-  dbo.collection('usuario').insertOne(cardU, (err, result) => {
-    if (err) {
-      return res.status(400).send('erro ao cadastrar');
-    }
-    res.redirect('/login');
-  });
-});
+// app.post('/cad', (req, res) => {
+//   let cardU = {
+//     email: req.body.email,
+//     senha: req.body.senha
+//   };
+//   dbo.collection('usuario').insertOne(cardU, (err, result) => {
+//     if (err) {
+//       return res.status(400).send('erro ao cadastrar');
+//     }
+//     res.redirect('/login');
+//   });
+// });
 //fim do teste ************************************************************************************************
 
 // app.post('/login', (req, res) => {

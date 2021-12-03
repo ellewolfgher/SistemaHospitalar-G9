@@ -1,19 +1,17 @@
-require('dotenv').config()
-const DB_USER = process.env.DB_USER
-const DB_PASSWORD = process.env.DB_PASSWORD
+require('dotenv').config();
+const DB_USER = process.env.DB_USER;
+const DB_PASSWORD = process.env.DB_PASSWORD;
 
-const mongodb = require('mongodb').MongoClient
-const url = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster0.rq9hs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+const mongoose = require('mongoose');
+const url = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster0.rq9hs.mongodb.net/hospital?retryWrites=true&w=majority`;
 
-const client = new mongodb(url)
+mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
-async function conectar() {
-    try{
-        await client.connect()
-        console.log('Conectado ao Banco de dados')
-    }catch(erro){
-        console.log(erro)
-    }
+try {
+  mongoose.Promise = global.Promise;
+  console.log('Atlas online');
+} catch (error) {
+  console.log('Erro de conexão ' + error);
 }
-conectar()
-module.exports = client
+
+module.exports = mongoose;
