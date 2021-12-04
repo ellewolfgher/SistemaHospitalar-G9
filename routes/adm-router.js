@@ -9,5 +9,5 @@ router.get('/viewAdm', admController.lista_medico_ADM);
 router.get('/viewUser', admController.lista_medico_USER);
 
 // router.get('/editar/:id', admController...);
-// router.get('/deletar/:id', admController.cad_medico_del);
+router.get('/deletar/:id', admController.cad_medico_del);
 module.exports = router;

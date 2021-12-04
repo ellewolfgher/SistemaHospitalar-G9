@@ -1,7 +1,8 @@
-const mongoose = require('mongoose')
+const mongoose = require('../conn');
 
-const login = mongoose.model('usuario', {
-    email: String, senha: String
-})
+const Usuarios = mongoose.model('usuarios', {
+  email: String,
+  senha: String
+});
 
-module.exports = login
+module.exports = Usuarios;

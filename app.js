@@ -11,16 +11,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 
-//********************* Alex *************************/
-app.get('/', (req, res) => {
-  res.render('home');
-});
-app.use('/cadastro', routerCadastro);
-app.use('/login', routerLogin);
-
-app.get('/viewsMedicos', (req, res) => {
-  res.render('listaMedicoUsu');
-});
+app.use('/view', routerCadastro);
+app.use('/', routerLogin);
 
 //meu teste **r**********************************************************************************************
 // app.post('/cad', (req, res) => {
