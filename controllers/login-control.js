@@ -1,5 +1,5 @@
 exports.loginView = (req, res) => {
-  res.render('login');
+  res.render('views/pages/login');
 };
 
 exports.validLogin = (req, res) => {
