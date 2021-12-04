@@ -8,11 +8,7 @@ exports.loginView = (req, res) => {
 exports.validLogin = (req, res) => {
   const emailOK = req.body.email;
   const senhaOK = req.body.senha;
-  //valida campo vazio
-  // let span = document.querySelector('span');
-  // console.log(span);
 
-  // let acao = [];
   acao = 'Email ou senha invalido';
   if (!emailOK) {
     return res.status(401).render('views/pages/login', { acao });
