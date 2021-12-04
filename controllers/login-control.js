@@ -1,6 +1,7 @@
 const db_usuarios = require('../models/login-model');
 exports.loginView = (req, res) => {
-  res.render('views/pages/login');
+  let acao = [];
+  res.render('views/pages/login', { acao });
 };
 
 //validação de login
@@ -8,11 +9,16 @@ exports.validLogin = (req, res) => {
   const emailOK = req.body.email;
   const senhaOK = req.body.senha;
   //valida campo vazio
+  // let span = document.querySelector('span');
+  // console.log(span);
+
+  // let acao = [];
+  acao = 'Email ou senha invalido';
   if (!emailOK) {
-    return res.status(401).send('Informe um email!');
+    return res.status(401).render('views/pages/login', { acao });
   }
   if (!senhaOK) {
-    return res.status(401).send('Informe uma senha!');
+    return res.status(401).render('views/pages/login', { acao });
   }
   //valida campo preenchido e buscando no BD
   db_usuarios.findOne({ email: emailOK }, (err, emailValid) => {
@@ -22,7 +28,7 @@ exports.validLogin = (req, res) => {
     }
     if (emailValid == null) {
       console.log(emailValid);
-      return res.status(400).send('Email ou senha errado/não confere');
+      return res.status(400).render('/');
     } else if (
       emailValid.email == 'adm@glowup.com' &&
       emailValid.senha == 1234
