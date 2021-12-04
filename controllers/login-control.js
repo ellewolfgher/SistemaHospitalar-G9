@@ -2,6 +2,7 @@ exports.loginView = (req, res) => {
   res.render('views/pages/login');
 };
 
+//validação de login
 exports.validLogin = (req, res) => {
   const emailOK = req.body.email;
   const senhaOK = req.body.senha;
