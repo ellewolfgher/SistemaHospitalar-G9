@@ -5,24 +5,11 @@ const routerCadastro = require('./routes/adm-router');
 const port = 7000;
 const path = require('path');
 
-<<<<<<< HEAD
 app.set('view engine', 'ejs');
 app.set('views', __dirname, '/views');
-=======
-// const rotaAdm = require('./routes/adm-router')
-// const rotaLogin = require('./routes/login-router')
-
-// app.use('/adm-router', rotaAdm)
-// app.use('/login-router', rotaLogin)
-
-
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
->>>>>>> 1603835eac27ffe406769d23ee65c21c9325b867
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
-
 
 //********************* Alex *************************/
 app.get('/', (req, res) => {
