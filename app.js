@@ -8,8 +8,8 @@ const hbs = exphbs.create({
   partialsDir: 'views/partials/'
 });
 
-const rotaAdm = require('./routes/adm-router')
-const rotaLogin = require('./routes/login-router')
+// const rotaAdm = require('./routes/adm-router')
+// const rotaLogin = require('./routes/login-router')
 
 // app.use('/adm-router', rotaAdm)
 // app.use('/login-router', rotaLogin)
