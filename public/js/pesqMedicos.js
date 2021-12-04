@@ -29,3 +29,7 @@ function pesquisarMedico() {
 
   }
 }
+
+// $(() => {
+//   $(".esconder").hide();
+// });
