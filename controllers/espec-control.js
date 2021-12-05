@@ -18,7 +18,7 @@ exports.cadastrar = (req, res) => {
 exports.cadastrarEspec = (req, res) => {
   if (req.body.idEspec == '') {
     const save_espec = new db_espec();
-    save_espec.espec = req.body.espec;
+    save_espec.especNome = req.body.especNome;
 
     save_espec.save(err => {
       if (err) throw err;
@@ -28,7 +28,7 @@ exports.cadastrarEspec = (req, res) => {
     const id = req.body.idEspec;
     db_espec.findById(id, (erro, resultado) => {
       if (erro) throw erro;
-      resultado.espec = req.body.espec;
+      resultado.espec = req.body.especNome;
 
       resultado.save(erro => {
         if (erro) throw erro;

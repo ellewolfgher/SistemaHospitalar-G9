@@ -28,7 +28,7 @@
           <tbody>
             <% resultado.forEach(item=>{ %>
             <tr>
-              <td><%= resultado.espec %></td>
+              <td><%= item.especNome %></td>
               <td>
                 <a
                   href="/view/deletarEspec/<%= item._id %>"
@@ -36,7 +36,7 @@
                   >deletar</a
                 >
                 <a
-                  href="/deletarLivro/<%= item._id %>"
+                  href="/view/editarEspec/<%= item._id %>"
                   class="btn btn-sm btn-primary"
                   >editar</a
                 >

@@ -13,5 +13,6 @@ router.get('/viewEspecialidade', especController.lista_espec);
 
 router.get('/editar/:id', admController.editar);
 router.get('/deletar/:id', admController.deletar);
+router.get('/editarEspec/:id', especController.editar);
 router.get('/deletarEspec/:id', especController.deletar);
 module.exports = router;
