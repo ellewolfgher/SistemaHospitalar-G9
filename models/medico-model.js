@@ -10,7 +10,7 @@ const Medicos = mongoose.model('medicos', {
   cel: Number,
   tel: Number,
   ramal: Number,
-  espec: String
+  espec: Array
 });
 
 module.exports = Medicos;
