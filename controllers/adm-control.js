@@ -48,7 +48,7 @@ exports.cadastrarMedico = (req, res) => {
 exports.cad_medico_del = (req, res) => {
   const id = req.params.id;
   console.log(id);
-  db_medico.deleteOne({ _id: id }, (err, resultado) => {
+  db_medico.deleteOne({ _id: id }, err => {
     if (err) {
       return res.status(400).send('Erro ao deletar no banco ' + err);
     }

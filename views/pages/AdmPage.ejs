@@ -26,7 +26,7 @@
 <!-- Cartões -->
 <div id="card-container" class="container mt-5 mb-5">
   <div class="row">
-    <div class="col-sm-12 col-md-6">
+    <div class="col-lg-3 col-sm-12 col-md-6">
       <% resultado.forEach(item=>{%>
       <div id="card-conteudo" class="card mb-3" style="max-width: 540px">
         <div class="row g-0">
@@ -38,8 +38,8 @@
             />
           </p>
           <div class="col-md-6">
-            <div class="card-body">
-              <p class="medicoEspec h4 card-title text-center">
+            <div id="teste" class="card-body">
+              <p class="h4 card-title text-center">
                 <%=item.pronome%>. <%=item.nome%>
               </p>
               <p class="card-text">Sobrenome: <%=item.sobrenome%></p>
@@ -48,9 +48,7 @@
               <p class="card-text">Celular: <%=item.cel%></p>
               <p class="card-text">Telefone: <%=item.tel%></p>
               <p class="card-text">Ramal: <%=item.ramal%></p>
-              <p class="medicoEspec card-text">
-                Especialidades: <%=item.espec%>
-              </p>
+              <span id="medicoEspec" class="card-text"> <%=item.espec%> </span>
               <p class="container-fluid d-flex justify-content-between">
                 <a href="/view/deletar/<%= item.id%>" class="btn btn-danger">
                   <i class="bi bi-trash-fill"></i>
