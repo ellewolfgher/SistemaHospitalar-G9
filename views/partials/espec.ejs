@@ -1,0 +1,17 @@
+<form action="/view/cadastrarEspec" method="post">
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      name="espec"
+      id="floatingInput"
+      placeholder="especialidades"
+    />
+    <label for="floatingInput">Especialidades</label>
+  </div>
+  <div>
+    <input type="text" hidden name="idEspec" value="<%= resultado._id%>" />
+    <button class="btn btn-primary" type="submit">Cadastrar</button>
+    <button class="btn btn-primary" type="reset">Cancelar</button>
+  </div>
+</form>
