@@ -40,6 +40,7 @@ exports.validLogin = (req, res) => {
 };
 
 exports.logout = (req, res) => {
-  req.logout();
+  localStorage.removeItem('ADM');
+  localStorage.removeItem('USER');
   res.redirect('/');
 };
