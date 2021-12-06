@@ -5,4 +5,6 @@ const loginControl = require('../controllers/login-control');
 router.get('/', loginControl.loginView);
 router.post('/verificarLogin', loginControl.validLogin);
 
+router.get('/logout', loginControl.logout);
+
 module.exports = router;

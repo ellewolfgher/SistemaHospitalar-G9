@@ -1,3 +1,5 @@
+const eadmin = require('../helpers/eadmin');
+const { eAdmin } = require('../helpers/eadmin');
 const db_usuarios = require('../models/login-model');
 exports.loginView = (req, res) => {
   let acao = [];
@@ -18,27 +20,26 @@ exports.validLogin = (req, res) => {
   }
   //valida campo preenchido e buscando no BD
   db_usuarios.findOne({ email: emailOK }, (err, emailValid) => {
-    console.log(emailValid);
     if (err) {
       return res.status(404).send('Algum erro ' + err);
     }
     if (emailValid == null) {
-      console.log(emailValid);
       return res.status(400).render('/');
-    } else if (
-      emailValid.email == 'adm@glowup.com' &&
-      emailValid.senha == 1234
-    ) {
+    }
+    if (emailValid.email == 'adm@glowup.com' && emailValid.senha == senhaOK) {
       global.tipoFunc = 'ADM';
       return res.status(200).redirect('/view/viewAdm');
-    } else if (
-      emailValid.email == 'user@glowup.com' &&
-      emailValid.senha == 7896
-    ) {
+    }
+    if (emailValid.email == 'user@glowup.com' && emailValid.senha == senhaOK) {
       global.tipoFunc = 'USER';
       return res.status(200).redirect('/view/viewUser');
     } else {
       return res.send('Negado');
     }
   });
+};
+
+exports.logout = (req, res) => {
+  req.logout();
+  res.redirect('/');
 };
