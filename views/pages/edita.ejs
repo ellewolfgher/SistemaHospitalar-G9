@@ -1,5 +1,5 @@
 <%- include('../partials/head')%>
-  <%- include('../partials/header') %>
+  <%- include('../partials/headerLogadoAdm.ejs')%>
     <%- include('../partials/espec.ejs') %>
 
       <h1 class="text-center mt-3 mb-3">Cadastro de Cirurgião</h1>
@@ -121,36 +121,20 @@
               <legend class="col-form-label col-sm-2 pt-0">Especialidade:</legend>
 
               <div class="col">
-                <input type="checkbox" name="espec" value=" Lipoaspiração" />
-                <label class="form-check-label" for="lipo">Lipoaspiração</label>
+                <% especs.forEach((item, index)=> { %>
+                  
+                    <% if (item.especNome == String(resultado.espec[`${index}`])) { %> 
+                    <input type="checkbox" name="especNome" value="<%= item.especNome %>" checked>
+                  <%= item.especNome %> </input>
 
-                <input type="checkbox" name="espec" value=" Abdominoplastia" />
-                <label class="form-check-label" for="abdom">Abdominoplastia</label>
+                  <% } else { %> 
+                        <input type="checkbox" name="especNome" value="<%= item.especNome %>" >
+                        <%= item.especNome %> </input>
+                    <% } %>
 
-                <input type="checkbox" name="espec" value=" Mastopexia" />
-                <label class="form-check-label" for="masto">Mastopexia</label>
-              </div>
-
-              <div class="col">
-                <input type="checkbox" name="espec" value=" Mamoplastia" />
-                <label class="form-check-label" for="mamo">Mamoplastia</label>
-
-                <input type="checkbox" name="espec" value=" Rinoplastia" />
-                <label class="form-check-label" for="rino">Rinoplastia</label>
-
-                <input type="checkbox" name="espec" value=" Gluteoplastia" />
-                <label class="form-check-label" for="gluteo">Gluteoplastia</label>
-              </div>
-
-              <div class="col">
-                <input type="checkbox" name="espec" value=" Otoplastia" />
-                <label class="form-check-label" for="oto">Otoplastia</label>
-
-                <input type="checkbox" name="espec" value=" Ginecomastia" />
-                <label class="form-check-label" for="gineco">Ginecomastia</label>
-
-                <input type="checkbox" name="espec" value=" Blefaroplastia" />
-                <label class="form-check-label" for="blefaro">Blefaroplastia</label>
+                 <% }) %>
+                  
+                
               </div>
             </div>
           </div>

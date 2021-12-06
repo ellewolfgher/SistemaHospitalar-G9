@@ -1,6 +1,12 @@
 <%- include('../partials/head')%>
   <%- include('../partials/headerLogadoAdm') %>
 
+    <!-- Botão de voltar e título da página -->
+    <div>
+      <a href="/home" class="btn btn-lg">
+        <p>Voltar</p>
+      </a>
+    </div>
     <div class="h1 text-center mb-5">Página do administrador</div>
     <!-- Botão de cadastro de novos médicos-->
     <div class="container mb-5">
@@ -22,7 +28,7 @@
       <div class="row no-gutters">
         <% resultado.forEach(item=>{ %>
           <div class="col-12 mb-3">
-              <div class="card">
+            <div class="card">
               <div class="d-flex" style="flex: 1 1 auto;">
                 <div class="img-square-wrapper">
                   <img class="" src="/img/<%=item.profile%>" alt="Card image cap" style="max-width: 277px;">
@@ -57,8 +63,8 @@
                 </div>
               </div>
             </div>
+            <% }) %>
           </div>
-          <% })%>
       </div>
     </div>
 
@@ -69,43 +75,3 @@
     <script type="text/javascript" src="/js/pesqMedicos.js"></script>
 
     <%- include('../partials/footer')%>
-
-
-    <!-- !!!!!!! -->
-    <!-- <div class="card container-fluid" style="max-width: 1300px;">
-      <div class="row no-gutters d-flex">
-        <% resultado.forEach(item=>{ %>
-        <div class="col-md-4 justify-content-center mt-3 mb-2" style="max-width: 310px;">
-            <img src="/img/<%=item.profile%>" class="card-img" alt="...">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h4 class="card-title">
-                <%=item.pronome%>. <%=item.sobrenome%>
-              </h4>
-              <p class="card-text">Nome: <%=item.nome%>
-                  <%=item.sobrenome%>
-              </p>
-              <p class="card-text">CRM: <%=item.crm%>
-              </p>
-              <p class="card-text">Telefone: <%=item.tel%>
-              </p>
-              <p class="card-text">Ramal: <%=item.ramal%>
-              </p>
-              <p class="card-text">Especialidade: <%=item.espec%>
-              </p>
-              <div class="d-md-flex justify-content-md-between">
-                <a href="/view/deletar/<%= item._id %>" class="btn btn-danger mt-2">
-                  <i class="bi bi-trash-fill"></i>
-                  Excluir
-                </a>
-                <a href="editar/<%= item._id %>" class="btn btn-success mt-2">
-                  <i class="bi bi-pen-fill"></i>
-                  Editar
-                </a>
-              </div>
-            </div>
-          </div>
-          <% })%>
-      </div>
-    </div> -->
