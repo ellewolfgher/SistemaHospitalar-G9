@@ -8,7 +8,7 @@ function pesquisarMedico() {
   cards = cardContainer.getElementsByClassName('card')
 
   for(i = 0; i < cards.length; i++) {
-    title = cards[i].querySelector('.card-body h4.card-title')
+    title = cards[i].querySelector('.card-body li.medico')
     if(title.innerText.toUpperCase().indexOf(input) > -1) {
       cards[i].style.display = "";
     }else{
