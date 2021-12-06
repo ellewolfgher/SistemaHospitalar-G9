@@ -4,10 +4,11 @@
   <!-- Barra de pesquisa por nome de médico  -->
   <form action="#" method="#" class="form-inline my-2 my-lg-0">
     <input
-      class="form-control mr-sm-2 mb-2"
-      type="search"
+      class="border border-success rounded mx-4"
+      type="text"
+      id="input-pesquisa"
+      onkeyup="pesquisarMedico()"
       placeholder="Pesquisar por médico"
-      aria-label="Search"
     />
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
       Pesquisar
@@ -125,22 +126,22 @@
   </form>
 
   <h1 class="text-center mt-4">...Medicos</h1>
-  <div class="row">
+  <!-- teste e o id colocado agora para -->
+  <div id="teste" class="row">
     <% resultado.forEach(item=>{ %>
     <div class="col-lg-3 col-md-6 col-sm-6 d-flex justify-content-center">
       <div class="card mt-5 shadow" style="width: 20rem">
         <img src="/img/<%=item.profile%>" class="card-img-top" />
-        <!-- <img src="https://placebear.com/300/300" class="card-img-top" /> -->
         <ul class="list-group list-group-flush">
           <!-- <li class="list-group-item">Nome: <%=item.pronome%></li> -->
-          <li class="list-group-item">
+          <li class="espec list-group-item">
             Nome: <%=item.pronome%>. <%=item.nome%>
           </li>
           <li class="list-group-item">Sobrenome: <%=item.sobrenome%></li>
           <li class="list-group-item">CRM: <%=item.crm%></li>
           <li class="list-group-item">Telefone: <%=item.tel%></li>
           <li class="list-group-item">Ramal: <%=item.ramal%></li>
-          <li class="list-group-item">Especialidade: <%=item.espec%></li>
+          <li class="espec list-group-item">Especialidade: <%=item.espec%></li>
         </ul>
       </div>
     </div>

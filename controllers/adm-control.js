@@ -69,8 +69,7 @@ exports.cadastrarMedico = (req, res) => {
            
       })
   }
-}
-
+};
 
 
 // Editar médico
@@ -85,11 +84,11 @@ exports.editar = (req, res) => {
 // Deletar médico
 
 exports.deletar = (req, res) => {
-  db_medico.deleteOne({_id: req.params.id}, (err) => {
-      if(err) throw err;
-      return res.redirect('/view/viewAdm')
-  })
-}
+  db_medico.deleteOne({ _id: req.params.id }, err => {
+    if (err) throw err;
+    return res.redirect('/view/viewAdm');
+  });
+};
 
 // exports.cad_medico_del = (req, res) => {
 //   const id = req.params.id;
