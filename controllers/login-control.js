@@ -25,16 +25,22 @@ exports.validLogin = (req, res) => {
     }
     if (emailValid == null) {
       return res.status(400).render('/');
-    }
-    if (emailValid.email == 'adm@glowup.com' && emailValid.senha == senhaOK) {
+    } else if (
+      emailValid.email == 'adm@glowup.com' &&
+      emailValid.senha == senhaOK
+    ) {
       global.tipoFunc = 'ADM';
       return res.status(200).redirect('/view/viewAdm');
-    }
-    if (emailValid.email == 'user@glowup.com' && emailValid.senha == senhaOK) {
+    } else if (
+      emailValid.email == 'user@glowup.com' &&
+      emailValid.senha == senhaOK
+    ) {
       global.tipoFunc = 'USER';
       return res.status(200).redirect('/view/viewUser');
+    } else if (emailOK != emailValid.email && senhaOK != emailValid.senha) {
+      return res.status(400).redirect('/views/login');
     } else {
-      return res.send('Negado');
+      return res.status(401).render('views/pages/login', { acao });
     }
   });
 };
