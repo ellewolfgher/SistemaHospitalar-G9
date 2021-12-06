@@ -23,8 +23,6 @@ exports.lista_medico_USER = (req, res) => {
 //Cadastra médico
 
 exports.cadastrar = (req, res) => {
-  // let acaobtn = "Cadastrar"
-  // const resultado = []
   db_espec.find({}, (err, resultado) => {
     if (err) {
       return res.status(400).send('Erro de pesquisa no banco ' + err);
@@ -80,12 +78,11 @@ exports.cadastrarMedico = (req, res) => {
 
 // Editar médico
 exports.editar = (req, res) => {
-  // let acaobtn = "Salvar"
+ 
   db_medico.findById(req.params.id, (err, resultado) => {
     if(err) throw err;
     db_espec.find({}, (err, especs)=> {
       if(err) throw err;
-      console.log(especs)
       return res.render('views/pages/edita', {resultado, especs});
     })
     
