@@ -5,6 +5,8 @@ const routerCadastro = require('./routes/adm-router');
 const port = 7000;
 const path = require('path');
 
+global.tipoFunc = 'USER';
+
 app.set('view engine', 'ejs');
 app.set('views', __dirname, '/views');
 app.use(express.urlencoded({ extended: true }));
