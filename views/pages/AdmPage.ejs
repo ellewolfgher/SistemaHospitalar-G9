@@ -22,15 +22,15 @@
         <% resultado.forEach(item=>{ %>
           <div class="col-12 mt-3">
             <div class="card">
-              <div class="card-horizontal" style="display: flex; flex: 1 1 auto;">
+              <div class="card-horizontal d-flex" style="flex: 1 1 auto;">
                 <div class="img-square-wrapper">
                   <img class="" src="/img/<%=item.profile%>" alt="Card image cap" style="max-width: 310px">
                 </div>
                 <div class="card-body">
-                  <h4 class="card-title">Nome: <%=item.pronome%>. <%=item.nome%>
+                  <h4 class="card-title"><%=item.pronome%>. <%=item.sobrenome%>
                   </h4>
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Sobrenome: <%=item.sobrenome%>
+                    <li class="list-group-item">Nome: <%=item.nome%> <%=item.sobrenome%>
                     </li>
                     <li class="list-group-item">CRM: <%=item.crm%>
                     </li>
@@ -40,18 +40,16 @@
                     </li>
                     <li class="espec list-group-item">Especialidade: <%=item.espec%>
                     </li>
-                    <li>
-                    <a href="editar/<%= item._id %>" class="btn btn-success mb-2">
+                    <div class="">
+                    <a href="/view/deletar/<%= item._id %>" class="btn btn-danger mt-4">
+                      <i class="bi bi-trash-fill"></i>
+                      Excluir
+                    </a>  
+                    <a href="editar/<%= item._id %>" class="btn btn-success mt-4">
                       <i class="bi bi-pen-fill"></i>
                       Editar
                     </a>
-                    </li>
-                    <li>
-                    <a href="/view/deletar/<%= item._id %>" class="btn btn-danger">
-                      <i class="bi bi-trash-fill"></i>
-                      Eliminar
-                    </a>
-                    </li>
+                    </div>
                   </ul>
                 </div>
               </div>
