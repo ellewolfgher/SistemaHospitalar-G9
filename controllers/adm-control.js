@@ -22,8 +22,9 @@ exports.lista_medico_USER = (req, res) => {
 //Cadastra médico
 
 exports.cadastrar = (req, res) => {
+  let acaobtn = "Cadastrar"
   const resultado = []
-  res.render('views/pages/cadastro', {resultado});
+  res.render('views/pages/cadastro', {resultado, acaobtn});
 };
 
 exports.cadastrarMedico = (req, res) => {
@@ -65,42 +66,19 @@ exports.cadastrarMedico = (req, res) => {
               if(erro)throw erro
               return res.redirect('/view/viewAdm')
           })
+           
       })
   }
 }
 
 
-// exports.cadastrarMedico = (req, res) => {
-
-
-//   const save_medico = new db_medico();
-//   save_medico.pronome = req.body.pronome;
-//   save_medico.profile = req.body.profile;
-//   save_medico.nome = req.body.nome;
-//   save_medico.sobrenome = req.body.sobrenome;
-//   save_medico.crm = req.body.crm;
-//   save_medico.email = req.body.email;
-//   save_medico.cel = req.body.cel;
-//   save_medico.tel = req.body.tel;
-//   save_medico.ramal = req.body.ramal;
-//   save_medico.espec = req.body.espec;
-
-//   save_medico.save(err => {
-//     if (err) {
-//       return res.status(400).send('Erro ao salvar no banco ' + err);
-//     }
-//     return res.redirect('/view/cadastro');
-//   });
-// };
-
-
-
 
 // Editar médico
 exports.editar = (req, res) => {
+  let acaobtn = "Salvar"
   db_medico.findById(req.params.id, (err, resultado) => {
       if(err) throw err;
-      return res.render('views/pages/cadastro', {resultado});
+      return res.render('views/pages/cadastro', {resultado, acaobtn});
   })
 }
 
