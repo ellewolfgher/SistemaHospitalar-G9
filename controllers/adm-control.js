@@ -22,9 +22,9 @@ exports.lista_medico_USER = (req, res) => {
 //Cadastra médico
 
 exports.cadastrar = (req, res) => {
-  let acaobtn = 'Cadastrar';
+  // let acaobtn = "Cadastrar"
   const resultado = [];
-  res.render('views/pages/cadastro', { resultado, acaobtn });
+  res.render('views/pages/cadastro', { resultado });
 };
 
 exports.cadastrarMedico = (req, res) => {
@@ -72,10 +72,10 @@ exports.cadastrarMedico = (req, res) => {
 
 // Editar médico
 exports.editar = (req, res) => {
-  let acaobtn = 'Salvar';
+  // let acaobtn = "Salvar"
   db_medico.findById(req.params.id, (err, resultado) => {
     if (err) throw err;
-    return res.render('views/pages/cadastro', { resultado, acaobtn });
+    return res.render('views/pages/edita', { resultado });
   });
 };
 

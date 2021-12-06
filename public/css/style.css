@@ -67,3 +67,9 @@ body {
   width: 100%;
   height: calc(100vh - 80px);
 }
+#card-user {
+  width: 18rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(12, 16, 31, 0.4);
+  margin: 20px 40px;
+}

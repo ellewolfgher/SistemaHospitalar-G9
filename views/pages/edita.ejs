@@ -1,40 +1,50 @@
-<%- include('../partials/head')%> <%- include('../partials/headerLogadoAdm.ejs')
-%> <%- include('../partials/espec.ejs') %>
+<%- include('../partials/head')%>
+  <%- include('../partials/header') %>
+    <%- include('../partials/espec.ejs') %>
 
-<h1 class="text-center mt-3 mb-3">Cadastro de cirurgião</h1>
-<div class="container d-flex justify-content-center align-center">
-  <form
-    action="/view/cadastrar"
-    method="post"
-    id="form-cadastro"
-    class="cont-float shadow-lg"
-  >
-    <!-- Primeira linha -->
-    <fieldset class="form-group mt-3">
-      <div class="row">
-        <!-- Pronome título -->
-        <legend class="col-form-label col-sm-1 pt-0">Título:</legend>
-        <div class="col-lg-5">
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="pronome"
-              id="dr"
-              value="Dr"
-              checked
-            />
-            <label class="form-check-label" for="pronome">Dr.</label>
-          </div>
-          <div class="form-check mt-2">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="pronome"
-              id="dra"
-              value="Dra"
-            />
-            <label class="form-check-label" for="dra">Dra.</label>
+      <h1 class="text-center mt-3 mb-3">Cadastro de Cirurgião</h1>
+      <div class="container d-flex justify-content-center align-center">
+        <form action="/view/edita" method="post" id="form-cadastro" class="cont-float shadow-lg">
+          <!-- Primeira linha -->
+          <fieldset class="form-group mt-3">
+            <div class="row">
+              <!-- Pronome título -->
+              <legend class="col-form-label col-sm-1 pt-0">Título:</legend>
+              <div class="col-lg-5">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="pronome" id="dr" value="Dr" checked />
+                  <label class="form-check-label" for="pronome">Dr.</label>
+                </div>
+                <div class="form-check mt-2">
+                  <input class="form-check-input" type="radio" name="pronome" id="dra" value="Dra" />
+                  <label class="form-check-label" for="dra">Dra.</label>
+                </div>
+              </div>
+              <!-- Foto perfil -->
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label for="profile">Selecione uma foto de perfil:</label>
+                  <input required class="form-control" type="file" class="form-control-file" name="profile" id="profile"
+                    value="<%=resultado.profile%>" />
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Segunda linha  -->
+          <div class="row mt-3">
+            <!-- Nome  -->
+            <div class="col">
+              <label for="nome">Nome:</label>
+              <input required type="text" class="form-control" id="nome" name="nome" minlength="3" placeholder="Nome"
+                value="<%=resultado.nome%>" />
+            </div>
+            <!-- Sobrenome -->
+            <div class="col">
+              <label for="sobrenome">Sobrenome:</label>
+              <input required type="text" class="form-control" id="sobrenome" name="sobrenome" minlength="2"
+                placeholder="Sobrenome" value="<%=resultado.sobrenome%>" />
+            </div>
           </div>
 
           <!-- Terceira linha  -->
@@ -108,21 +118,9 @@
 
           <div class="row mt-3 mb-3">
             <div class="form-check">
-
-              <!-- <legend class="col-form-label col-sm-2 pt-0">Especialidade:</legend>
+              <legend class="col-form-label col-sm-2 pt-0">Especialidade:</legend>
 
               <div class="col">
-                <  % resultado.forEach(item=> { %>
-                  <input type="checkbox" name="especNome" value="< %= item.especNome %>">
-                  < %= item.especNome %> </input>
-          
-                < % }) %> 
-              </div>
-              -->
-                <%- include('../partials/checkEspec.ejs') %>
-              
-
-              <!-- <div class="col">
                 <input type="checkbox" name="espec" value=" Lipoaspiração" />
                 <label class="form-check-label" for="lipo">Lipoaspiração</label>
 
@@ -153,17 +151,17 @@
 
                 <input type="checkbox" name="espec" value=" Blefaroplastia" />
                 <label class="form-check-label" for="blefaro">Blefaroplastia</label>
-              </div> -->
+              </div>
             </div>
           </div>
 
           <div>
             <input type="text" hidden name="idMed" value="<%=resultado._id%>">
-            <button id="cancel-cadastro" type="reset" class="btn btn-danger">
+            <button onclick="window.location.href='/view/viewAdm'" id="cancel-cadastro" class="btn btn-danger">
               Cancelar
             </button>
             <button id="submit-cadastro" style="float: right;" type="submit" class="btn btn-primary">
-              Cadastrar
+              Salvar
             </button>
           </div>
         </form>
