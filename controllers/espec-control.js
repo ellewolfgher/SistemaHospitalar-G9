@@ -10,6 +10,16 @@ exports.lista_espec = (req, res) => {
   });
 };
 
+//teste
+exports.listaCheck = (req, res) => {
+  db_espec.find({}, (err, resultado) => {
+    if (err) {
+      return res.status(400).send('Erro de pesquisa no banco ' + err);
+    }
+    res.render('views/pages/cadastro', { resultado });
+  });
+};
+
 exports.cadastrar = (req, res) => {
   const resultado = [];
   res.render('views/pages/cadastro', { resultado });
@@ -28,7 +38,7 @@ exports.cadastrarEspec = (req, res) => {
     const id = req.body.idEspec;
     db_espec.findById(id, (erro, resultado) => {
       if (erro) throw erro;
-      resultado.espec = req.body.especNome;
+      resultado.espec = req.body.especNome; 
 
       resultado.save(erro => {
         if (erro) throw erro;
