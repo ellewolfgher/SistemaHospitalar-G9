@@ -1,16 +1,29 @@
 <h2 class="text-center pt-2">Cadastro de Especialidade</h2>
 
 <div class="container d-flex justify-content-center align-center">
-  <form action="/view/cadastrarEspec" method="post" id="form-cadastro" class="cont-float shadow-lg">
+  <form
+    action="/view/cadastrarEspec"
+    method="post"
+    id="form-cadastro"
+    class="cont-float shadow-lg"
+  >
     <div class="form-floating mb-3">
-      <input type="text" class="form-control text-center" name="especNome" id="floatingInput" placeholder="especialidades"
-        value=" <%=resultado.especNome%>" />
+      <input
+        type="text"
+        class="form-control text-center"
+        name="especNome"
+        id="floatingInput"
+        placeholder="especialidades"
+        value=" <%=resultado.especNome%>"
+      />
       <label for="floatingInput">Especialidades</label>
     </div>
     <div>
       <input type="text" hidden name="idEspec" value="<%= resultado._id%>" />
       <button class="btn btn-danger" type="reset">Cancelar</button>
-      <button class="btn btn-primary" style="float: right;" type="submit">Cadastrar</button>
+      <button class="btn btn-primary" style="float: right" type="submit">
+        Atualizar
+      </button>
     </div>
   </form>
-</div>  
+</div>

@@ -17,6 +17,7 @@ router.get('/viewEspecialidade', eAdmin, especController.lista_espec);
 router.post('/edita', eAdmin, admController.cadastrarMedico);
 router.get('/editar/:id', eAdmin, admController.editar);
 
+router.get('/editarEspecEspec/:id', eAdmin, especController.editarEspec);
 router.get('/deletar/:id', eAdmin, admController.deletar);
 router.get('/editarEspec/:id', eAdmin, especController.editar);
 router.get('/deletarEspec/:id', eAdmin, especController.deletar);
