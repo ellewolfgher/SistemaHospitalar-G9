@@ -7,7 +7,7 @@
 body {
   font-family: 'Poppins', sans-serif;
   font-family: 'Share Tech Mono', monospace;
-  background-color: rgb(196, 234, 252);
+  background: linear-gradient(45deg, #13293D, #006494);
 }
 
 .pr-20 {
@@ -24,7 +24,7 @@ body {
 }
 
 .bg-light {
-  background-color: rgb(1, 166, 216) !important;
+  background-color: rgb(255, 255, 255) !important;
 }
 
 .navsize {
@@ -72,4 +72,8 @@ body {
   border-radius: 10px;
   box-shadow: 0 5px 10px rgba(12, 16, 31, 0.4);
   /* margin: 20px 40px; */
+}
+
+.cor {
+  color: #13293D !important;
 }
