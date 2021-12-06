@@ -12,21 +12,21 @@
   />
 
   <h1>Lista de Especialidade</h1>
-  <div class="container-fluid mt-4">
+  <div class="container bg-light w-50 mt-4" style="border-radius: 15px">
     <div class="row d-flex">
       <div class="col-12">
-        <table id="myTable" class="table table-sm table-hover text-white">
+        <table id="myTable" class="table table-sm table-hover cor">
           <thead>
             <tr>
-              <th>Especialidade</th>
-              <th>Funções</th>
+              <th class="pb-2">Especialidade</th>
+              <th class="pb-2" style="float: right">Funções</th>
             </tr>
           </thead>
           <tbody>
             <% resultado.forEach(item=>{ %>
             <tr>
               <td><%= item.especNome %></td>
-              <td>
+              <td class="pb-2" style="float: right">
                 <a
                   href="/view/deletarEspec/<%= item._id %>"
                   class="btn btn-sm btn-primary"
