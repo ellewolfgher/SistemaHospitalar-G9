@@ -4,10 +4,14 @@
         <div class="container mb-5 mt-5 text-center">
           <!-- Barra de pesquisa por nome de médico  -->
           <form action="#" method="#" class="form-inline my-2 my-lg-0">
-            <input class="border border-success rounded mx-4" type="text" id="filter-medico" onkeyup="pesquisarMedico()"
-              placeholder="Pesquisar por médico" />
-            <input class="border border-success rounded mx-4" type="text" id="filter-espec" onkeyup="pesquisarEspec()"
-              placeholder="Pesquisar por especialidade" />
+            <div class="col-12 d-flex flex-wrap justify-content-between mb-3">
+              <input class="form-control border border-success rounded mx-4" type="text" id="filter-medico"
+                onkeyup="pesquisarMedico()" placeholder="Pesquisar por médico" />
+            </div>
+            <div class="col-12 d-flex flex-wrap justify-content-between">
+              <input class="form-control border border-success rounded mx-4" type="text" id="filter-espec"
+                onkeyup="pesquisarEspec()" placeholder="Pesquisar por especialidade" />
+            </div>
           </form>
 
           <h1 class="text-center mt-4">Médicos</h1>
@@ -20,7 +24,7 @@
                     <h4 class="card-title"><%=item.pronome%>. <%=item.sobrenome%>
                     </h4>
                     <ul class="list-group list-group-flush">
-                      <li class="list-group-item">Nome: <%=item.nome%> <%=item.sobrenome%>
+                      <li class="medico list-group-item">Nome: <%=item.nome%> <%=item.sobrenome%>
                       </li>
                       <li class="list-group-item">CRM: <%=item.crm%>
                       </li>

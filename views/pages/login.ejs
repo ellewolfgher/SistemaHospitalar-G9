@@ -4,6 +4,7 @@
 
 <header><%- include('../partials/header') %></header>
 
+<<<<<<< HEAD
 <div class="container">
   <form action="/verificarLogin" method="post">
     <label for="email">Email</label>
@@ -16,6 +17,31 @@
     <button type="reset">Cancelar</button>
     <span><%= acao%></span>
   </form>
+=======
+<div class="container container-fluid mt-5">
+  <div class="row d-flex justify-content-center">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h2 class="card-title text-center">Login</h2>
+        <form action="/verificarLogin" method="post">
+
+          <label for="email">Email</label>
+          <input class="form-control" type="email" placeholder="Digite seu email" name="email" />
+        
+          <label for="senha">Senha</label>
+          <input class="form-control" type="password" placeholder="Digite seu senha" name="senha" />
+
+          <div class="d-flex justify-content-between mt-5 mb-5">
+            <button type="reset" class="btn btn-danger">Cancelar</button>
+            <button type="submit" class="btn btn-success">Logar</button>
+          <span><%= acao%></span>
+          </div>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+>>>>>>> 8270f4defe19b0fed373d7ff6b287ffb5625de73
 </div>
 
 <%- include('../partials/footer')%>
