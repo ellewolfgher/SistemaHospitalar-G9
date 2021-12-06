@@ -40,14 +40,18 @@
                     </li>
                     <li class="espec list-group-item">Especialidade: <%=item.espec%>
                     </li>
+                    <li>
                     <a href="editar/<%= item._id %>" class="btn btn-success mb-2">
                       <i class="bi bi-pen-fill"></i>
                       Editar
                     </a>
+                    </li>
+                    <li>
                     <a href="/view/deletar/<%= item._id %>" class="btn btn-danger">
                       <i class="bi bi-trash-fill"></i>
                       Eliminar
                     </a>
+                    </li>
                   </ul>
                 </div>
               </div>
