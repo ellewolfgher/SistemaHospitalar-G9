@@ -22,82 +22,64 @@ exports.lista_medico_USER = (req, res) => {
 //Cadastra médico
 
 exports.cadastrar = (req, res) => {
-  const resultado = [];
-  res.render('views/pages/cadastro', { resultado });
+  let acaobtn = "Cadastrar"
+  const resultado = []
+  res.render('views/pages/cadastro', {resultado, acaobtn});
 };
 
 exports.cadastrarMedico = (req, res) => {
-  if (req.body.idMed == '') {
-    const save_medico = new db_medico();
+  if(req.body.idMed == '') {
+      const save_medico = new db_medico();
 
-    save_medico.pronome = req.body.pronome;
-    save_medico.profile = req.body.profile;
-    save_medico.nome = req.body.nome;
-    save_medico.sobrenome = req.body.sobrenome;
-    save_medico.crm = req.body.crm;
-    save_medico.email = req.body.email;
-    save_medico.cel = req.body.cel;
-    save_medico.tel = req.body.tel;
-    save_medico.ramal = req.body.ramal;
-    save_medico.espec = req.body.espec;
-
-    save_medico.save(err => {
-      if (err) throw err;
-
-      return res.redirect('/view/cadastro');
-    });
-  } else {
-    const id = req.body.idMed;
-    db_medico.findById(id, (erro, resultado) => {
-      if (erro) throw erro;
-      resultado.pronome = req.body.pronome;
-      resultado.profile = req.body.profile;
-      resultado.nome = req.body.nome;
-      resultado.sobrenome = req.body.sobrenome;
-      resultado.crm = req.body.crm;
-      resultado.email = req.body.email;
-      resultado.cel = req.body.cel;
-      resultado.tel = req.body.tel;
-      resultado.ramal = req.body.ramal;
-      resultado.espec = req.body.espec;
-
-      resultado.save(erro => {
-        if (erro) throw erro;
-        return res.redirect('/view/viewAdm');
-      });
-    });
+      save_medico.pronome = req.body.pronome;
+      save_medico.profile = req.body.profile;
+      save_medico.nome = req.body.nome;
+      save_medico.sobrenome = req.body.sobrenome;
+      save_medico.crm = req.body.crm;
+      save_medico.email = req.body.email;
+      save_medico.cel = req.body.cel;
+      save_medico.tel = req.body.tel;
+      save_medico.ramal = req.body.ramal;
+      save_medico.espec = req.body.espec;
+  
+      save_medico.save((err) => {
+          if(err) throw err;
+  
+          return res.redirect('/view/cadastro')
+      })
+  } else { 
+      const id = req.body.idMed;
+      db_medico.findById(id, (erro, resultado)=>{
+          if(erro)throw erro
+          resultado.pronome = req.body.pronome;
+          resultado.profile = req.body.profile;
+          resultado.nome = req.body.nome;
+          resultado.sobrenome = req.body.sobrenome;
+          resultado.crm = req.body.crm;
+          resultado.email = req.body.email;
+          resultado.cel = req.body.cel;
+          resultado.tel = req.body.tel;
+          resultado.ramal = req.body.ramal;
+          resultado.espec = req.body.espec;
+  
+          resultado.save((erro) => {
+              if(erro)throw erro
+              return res.redirect('/view/viewAdm')
+          })
+           
+      })
   }
 };
 
-// exports.cadastrarMedico = (req, res) => {
-
-//   const save_medico = new db_medico();
-//   save_medico.pronome = req.body.pronome;
-//   save_medico.profile = req.body.profile;
-//   save_medico.nome = req.body.nome;
-//   save_medico.sobrenome = req.body.sobrenome;
-//   save_medico.crm = req.body.crm;
-//   save_medico.email = req.body.email;
-//   save_medico.cel = req.body.cel;
-//   save_medico.tel = req.body.tel;
-//   save_medico.ramal = req.body.ramal;
-//   save_medico.espec = req.body.espec;
-
-//   save_medico.save(err => {
-//     if (err) {
-//       return res.status(400).send('Erro ao salvar no banco ' + err);
-//     }
-//     return res.redirect('/view/cadastro');
-//   });
-// };
 
 // Editar médico
 exports.editar = (req, res) => {
+  let acaobtn = "Salvar"
   db_medico.findById(req.params.id, (err, resultado) => {
-    if (err) throw err;
-    return res.render('views/pages/cadastro', { resultado });
-  });
-};
+      if(err) throw err;
+      return res.render('views/pages/cadastro', {resultado, acaobtn});
+  })
+}
 
 // Deletar médico
 
