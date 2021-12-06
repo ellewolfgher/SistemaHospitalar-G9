@@ -38,11 +38,12 @@ exports.cadastrarEspec = (req, res) => {
     const id = req.body.idEspec;
     db_espec.findById(id, (erro, resultado) => {
       if (erro) throw erro;
-      resultado.espec = req.body.especNome; 
+      resultado.espec = req.body.especNome;
 
       resultado.save(erro => {
         if (erro) throw erro;
-        return res.redirect('/view/viewAdm');
+        //modificado para nova pagina de editar -Alex
+        return res.redirect('/view/viewEspecialista');
       });
     });
   }
@@ -52,6 +53,14 @@ exports.editar = (req, res) => {
   db_espec.findById(req.params.id, (err, resultado) => {
     if (err) throw err;
     return res.render('views/pages/cadastro', { resultado });
+  });
+};
+
+//Editar para rota do especialidade -Alex
+exports.editarEspec = (req, res) => {
+  db_espec.findById(req.params.id, (err, resultado) => {
+    if (err) throw err;
+    return res.render('views/partials/especEspec', { resultado });
   });
 };
 
