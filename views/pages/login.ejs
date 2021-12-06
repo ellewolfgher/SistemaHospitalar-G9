@@ -2,20 +2,18 @@
   <%- include('../partials/head')%>
 </head>
 
-<body class="container">
-  <header><%- include('../partials/header') %></header>
+<header><%- include('../partials/header') %></header>
 
-  <form action="/verificarLogin" method="post">
-    <label for="email">Email</label>
-    <input type="email" placeholder="Digite seu email" name="email" />
+<form action="/verificarLogin" method="post">
+  <label for="email">Email</label>
+  <input type="email" placeholder="Digite seu email" name="email" />
 
-    <label for="senha">Senha</label>
-    <input type="password" placeholder="Digite seu senha" name="senha" />
+  <label for="senha">Senha</label>
+  <input type="password" placeholder="Digite seu senha" name="senha" />
 
-    <button type="submit">Logar</button>
-    <button type="reset">Cancelar</button>
-    <span><%= acao%></span>
-  </form>
+  <button type="submit">Logar</button>
+  <button type="reset">Cancelar</button>
+  <span><%= acao%></span>
+</form>
 
-  <%- include('../partials/footer')%>
-</body>
+<%- include('../partials/footer')%>
