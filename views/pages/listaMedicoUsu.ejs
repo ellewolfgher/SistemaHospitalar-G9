@@ -1,154 +1,48 @@
-<%- include('../partials/head')%> <%- include('../partials/header') %>
+<%- include('../partials/head')%>
+  <%- include('../partials/header') %>
 
-<div class="container mb-5 mt-5 text-center">
-  <!-- Barra de pesquisa por nome de médico  -->
-  <form action="#" method="#" class="form-inline my-2 my-lg-0">
-    <input
-      class="border border-success rounded mx-4"
-      type="text"
-      id="input-pesquisa"
-      onkeyup="pesquisarMedico()"
-      placeholder="Pesquisar por médico"
-    />
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-      Pesquisar
-    </button>
-  </form>
-  <!-- Filtro por especialidades após ter o nome do médico -->
-  <form action="#" method="#" class="container text-center mb-5 mt-5">
-    <h2 class="text-center">Filtrar por especialidade</h2>
-    <div class="row mt-3 justify-content-center">
-      <div class="form-check col-lg-2">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          id="inlineCheckbox1"
-          name="option1"
-        />
-        <label class="form-check-label" for="inlineCheckbox1"
-          >Lipoaspiração</label
-        >
-      </div>
-      <div class="form-check col-lg-2">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          id="inlineCheckbox2"
-          name="option2"
-        />
-        <label class="form-check-label" for="inlineCheckbox2"
-          >Abdominoplastia</label
-        >
-      </div>
-      <div class="form-check col-lg-2">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          id="inlineCheckbox3"
-          name="option3"
-        />
-        <label class="form-check-label" for="inlineCheckbox1">Mastopexia</label>
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="form-check col-lg-2">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          id="inlineCheckbox4"
-          name="option4"
-        />
-        <label class="form-check-label" for="inlineCheckbox2"
-          >Mamoplastia</label
-        >
-      </div>
-      <div class="form-check col-lg-2">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          id="inlineCheckbox5"
-          name="option5"
-        />
-        <label class="form-check-label" for="inlineCheckbox1"
-          >Rinoplastia</label
-        >
-      </div>
-      <div class="form-check col-lg-2">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          id="inlineCheckbox6"
-          name="option6"
-        />
-        <label class="form-check-label" for="inlineCheckbox2"
-          >Gluteoplastia</label
-        >
-      </div>
-    </div>
-    <div class="row mb-3 justify-content-center">
-      <div class="form-check col-lg-2">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          id="inlineCheckbox7"
-          name="option7"
-        />
-        <label class="form-check-label" for="inlineCheckbox1">Otoplastia</label>
-      </div>
-      <div class="form-check col-lg-2">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          id="inlineCheckbox8"
-          name="option8"
-        />
-        <label class="form-check-label" for="inlineCheckbox1"
-          >Ginecomastia</label
-        >
-      </div>
-      <div class="form-check col-lg-2">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          id="inlineCheckbox9"
-          name="option9"
-        />
-        <label class="form-check-label" for="inlineCheckbox2"
-          >Blefaroplastia</label
-        >
-      </div>
-    </div>
-    <div>
-      <button class="btn btn-outline-success my-2 my-sm-0" type="reset">
-        Limpar
-      </button>
-    </div>
-  </form>
+    <div class="container mb-5 mt-5 text-center">
+      <!-- Barra de pesquisa por nome de médico  -->
+      <form action="#" method="#" class="form-inline my-2 my-lg-0">
+        <input class="border border-success rounded mx-4" type="text" id="filter-medico" onkeyup="pesquisarMedico()"
+          placeholder="Pesquisar por médico" />
+        <input class="border border-success rounded mx-4" type="text" id="input-pesquisa-espec"
+          onkeyup="pesquisarEspec()" placeholder="Pesquisar por especialidade" />
+      </form>
 
-  <h1 class="text-center mt-4">...Medicos</h1>
-  <!-- teste e o id colocado agora para -->
-  <div id="teste" class="row">
-    <% resultado.forEach(item=>{ %>
-    <div class="col-lg-3 col-md-6 col-sm-6 d-flex justify-content-center">
-      <div class="card mt-5 shadow" style="width: 20rem">
-        <img src="/img/<%=item.profile%>" class="card-img-top" />
-        <ul class="list-group list-group-flush">
-          <!-- <li class="list-group-item">Nome: <%=item.pronome%></li> -->
-          <li class="espec list-group-item">
-            Nome: <%=item.pronome%>. <%=item.nome%>
-          </li>
-          <li class="list-group-item">Sobrenome: <%=item.sobrenome%></li>
-          <li class="list-group-item">CRM: <%=item.crm%></li>
-          <li class="list-group-item">Telefone: <%=item.tel%></li>
-          <li class="list-group-item">Ramal: <%=item.ramal%></li>
-          <li class="espec list-group-item">Especialidade: <%=item.espec%></li>
-        </ul>
+      <h1 class="text-center mt-4">Médicos</h1>
+      <!-- teste e o id colocado agora para -->
+      <div id="card-container" class="container container-fluid">
+        <div class="row">
+          <% resultado.forEach(item=>{ %>
+            <div class="col-lg-3 col-md-6 col-sm-6 d-flex justify-content-center">
+              <div class="card mt-5 shadow" style="width: 20rem">
+                <img src="/img/<%=item.profile%>" class="card-img-top" />
+                <ul class="list-group list-group-flush">
+                  <!-- <li class="list-group-item">Nome: <%=item.pronome%></li> -->
+                  <li class="medico list-group-item">
+                    Nome: <%=item.pronome%>. <%=item.nome%>
+                  </li>
+                  <li class="list-group-item">Sobrenome: <%=item.sobrenome%>
+                  </li>
+                  <li class="list-group-item">CRM: <%=item.crm%>
+                  </li>
+                  <li class="list-group-item">Telefone: <%=item.tel%>
+                  </li>
+                  <li class="list-group-item">Ramal: <%=item.ramal%>
+                  </li>
+                  <li class="espec list-group-item">Especialidade: <%=item.espec%>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <% })%>
+        </div>
       </div>
     </div>
-    <% })%>
-  </div>
-</div>
 
-<a class="text-center" href="#nav"><h1><i class="bi bi-arrow-up-circle"></i></h1></a>
+    <a class="text-center" href="#nav">
+      <h1><i class="bi bi-arrow-up-circle"></i></h1>
+    </a>
 
-<%- include('../partials/footer')%>
+    <%- include('../partials/footer')%>
