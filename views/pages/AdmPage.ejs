@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 <%- include('../partials/head')%>
   <%- include('../partials/header') %>
+=======
+<%- include('../partials/head')%> <%- include('../partials/headerLogadoAdm') %>
+>>>>>>> 1ad1f4c4b82b97a889966806f651056eb03d3ff5
 
     <div class="h1 text-center mb-5">Página do administrador</div>
     <!-- Botão de cadastro de novos médicos-->
@@ -17,6 +21,7 @@
         </div>
       </div>
     </div>
+<<<<<<< HEAD
     <!-- Cartões -->
     <div id="card-container" class="container-fluid">
       <div class="row">
@@ -52,6 +57,50 @@
                   </ul>
                 </div>
               </div>
+=======
+  </div>
+</div>
+<!-- Cartões -->
+<div id="card-container" class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <% resultado.forEach(item=>{ %>
+      <div id="card-conteudo" class="card mb-3" style="max-width: 540px">
+        <div class="row g-0">
+          <p class="col-md-6">
+            <img
+              src="/img/<%=item.profile %>"
+              class="img-fluid rounded-start"
+              alt="Foto de perfil"
+            />
+          </p>
+          <div class="col-md-6">
+            <div class="card-body">
+              <p class="medicoEspec h4 card-title text-center">
+                <%=item.pronome %>. <%=item.sobrenome %>
+              </p>
+              <p class="card-text">
+                Nome: <%=item.nome %> <%=item.sobrenome %>
+              </p>
+              <p class="card-text">CRM: <%=item.crm %></p>
+              <p class="card-text">E-mail: <%=item.email %></p>
+              <p class="card-text">Celular: <%=item.cel %></p>
+              <p class="card-text">Telefone: <%=item.tel %></p>
+              <p class="card-text">Ramal: <%=item.ramal %></p>
+              <p class="medicoEspec card-text">
+                Especialidade: <%=item.espec %>
+              </p>
+              <p class="container-fluid d-flex justify-content-between">
+                <a href="/view/deletar/<%= item._id %>" class="btn btn-danger">
+                  <i class="bi bi-trash-fill"></i>
+                  Eliminar
+                </a>
+                <a href="/view/editar/<%= item._id %>" class="btn btn-success">
+                  <i class="bi bi-pen-fill"></i>
+                  Editar
+                </a>
+              </p>
+>>>>>>> 1ad1f4c4b82b97a889966806f651056eb03d3ff5
             </div>
           </div>
           <% })%>

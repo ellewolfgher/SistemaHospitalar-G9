@@ -29,11 +29,13 @@ exports.validLogin = (req, res) => {
       emailValid.email == 'adm@glowup.com' &&
       emailValid.senha == 1234
     ) {
+      global.tipoFunc = 'ADM';
       return res.status(200).redirect('/view/viewAdm');
     } else if (
       emailValid.email == 'user@glowup.com' &&
       emailValid.senha == 7896
     ) {
+      global.tipoFunc = 'USER';
       return res.status(200).redirect('/view/viewUser');
     } else {
       return res.send('Negado');

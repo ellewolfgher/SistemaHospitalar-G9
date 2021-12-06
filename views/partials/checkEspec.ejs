@@ -1,0 +1,7 @@
+<legend class="col-form-label col-sm-2 pt-0">Especialidade:</legend>
+
+<div class="col">
+    <% resultado.forEach(item=>{ %>
+        <input type="checkbox" name="especNome" value="<%= item.especNome %>"> <%= item.especNome %> </input>
+    <% }) %>
+</div>
