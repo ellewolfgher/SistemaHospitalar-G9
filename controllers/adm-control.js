@@ -35,8 +35,8 @@ exports.cadastrar = (req, res) => {
 };
 
 exports.cadastrarMedico = (req, res) => {
-  if(req.body.idMed == '') {
-      const save_medico = new db_medico();
+  if (req.body.idMed == '') {
+    const save_medico = new db_medico();
 
       save_medico.pronome = req.body.pronome;
       save_medico.profile = req.body.profile;
@@ -77,7 +77,6 @@ exports.cadastrarMedico = (req, res) => {
       })
   }
 };
-
 
 // Editar médico
 exports.editar = (req, res) => {
