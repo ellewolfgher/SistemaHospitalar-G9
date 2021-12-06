@@ -1,24 +1,20 @@
 <%- include('../partials/head')%>
   <%- include('../partials/headerLogadoAdm') %>
 
-    <!-- Botão de voltar e título da página -->
-    <div>
-      <a href="/home" class="btn btn-lg">
-        <p>Voltar</p>
-      </a>
-    </div>
-    <div class="h1 text-center mb-5">Página do administrador</div>
+    <div class="h1 text-center mt-4 mb-5">Página do administrador</div>
     <!-- Botão de cadastro de novos médicos-->
     <div class="container mb-5">
       <div class="row">
         <div class="col-12 d-flex flex-wrap justify-content-center">
           <a href="/view/cadastro" class="btn btn-primary mx-4 mb-4">Cadastrar novo médico</a>
           <!-- Barras de pesquisa por médico e especialidade -->
-          <div class="col-12 d-flex flex-wrap justify-content-center">
-            <input class="border border-success rounded mx-4" type="text" id="filter-medico" onkeyup="pesquisarMedico()"
-              placeholder="Pesquisar por médico" />
-            <input class="border border-success rounded mx-4" type="text" id="filter-espec" onkeyup="pesquisarEspec()"
-              placeholder="Pesquisar por especialidade" />
+          <div class="col-12 d-flex flex-wrap justify-content-between mb-3">
+            <input class="form-control border border-success rounded mx-4" type="text" id="filter-medico"
+              onkeyup="pesquisarMedico()" placeholder="Pesquisar por médico" />
+          </div>
+          <div class="col-12 d-flex flex-wrap justify-content-between">
+            <input class="form-control border border-success rounded mx-4" type="text" id="filter-espec"
+              onkeyup="pesquisarEspec()" placeholder="Pesquisar por especialidade" />
           </div>
         </div>
       </div>

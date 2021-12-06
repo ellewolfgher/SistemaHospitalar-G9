@@ -3,22 +3,19 @@
 <div class="container mb-5 mt-5 text-center">
   <!-- Barra de pesquisa por nome de médico  -->
   <input
-    class="form-control mr-sm-2 mb-2"
+    id="myInput"
+    class="form-control mr-sm-2 mb-4"
     type="search"
-    placeholder="Pesquisar por médico"
+    placeholder="Pesquisar por especialidade"
+    onkeyup="pesquisarPageEspec()"
     aria-label="Search"
   />
-  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-    Pesquisar
-  </button>
 
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <div class="col-6">
-          <h1>Lista de Especialidade</h1>
-        </div>
-        <table class="table table-sm table-hover">
+  <h1>Lista de Especialidade</h1>
+  <div class="container-fluid mt-4">
+    <div class="row d-flex">
+      <div class="col-12">
+        <table id="myTable" class="table table-sm table-hover">
           <thead>
             <tr>
               <th>Especialidade</th>
@@ -35,11 +32,11 @@
                   class="btn btn-sm btn-primary"
                   >deletar</a
                 >
-                <a
+                <!-- <a
                   href="/view/editarEspec/<%= item._id %>"
                   class="btn btn-sm btn-primary"
                   >editar</a
-                >
+                > -->
               </td>
             </tr>
             <% }) %>
