@@ -1,75 +1,5 @@
 <%- include('../partials/head')%> <%- include('../partials/headerLogadoAdm') %>
 
-<<<<<<< HEAD
-<!-- Botão de voltar e título da página -->
-<!-- <div>
-      <a href="/home" class="btn btn-lg">
-        <p>Voltar</p>
-      </a>
-    </div> -->
-<div class="h1 text-center mb-5">Página do administrador</div>
-<!-- Botão de cadastro de novos médicos-->
-<div class="container mb-5">
-  <div class="row">
-    <div class="col-12 d-flex flex-wrap justify-content-center">
-      <a href="/view/cadastro" class="btn btn-primary mx-4"
-        >Cadastrar novo médico</a
-      >
-      <!-- Barra de pesquisa -->
-      <input
-        class="border border-success rounded mx-4"
-        type="text"
-        id="input-pesquisa"
-        onkeyup="pesquisarMedico()"
-        placeholder="Pesquisar por médico"
-      />
-    </div>
-  </div>
-</div>
-<!-- Cartões -->
-<div id="card-container" class="container mt-5 mb-5">
-  <div class="row">
-    <div class="col-sm-12 col-md-6">
-      <% resultado.forEach(item=>{ %>
-      <div id="card-conteudo" class="card mb-3" style="max-width: 540px">
-        <div class="row g-0">
-          <p class="col-md-6">
-            <img
-              src="/img/<%=item.profile %>"
-              class="img-fluid rounded-start"
-              alt="Foto de perfil"
-            />
-          </p>
-          <div class="col-md-6">
-            <div class="card-body">
-              <p class="medicoEspec h4 card-title text-center">
-                <%=item.pronome %>. <%=item.sobrenome %>
-              </p>
-              <p class="card-text">
-                Nome: <%=item.nome %> <%=item.sobrenome %>
-              </p>
-              <p class="card-text">CRM: <%=item.crm %></p>
-              <p class="card-text">E-mail: <%=item.email %></p>
-              <p class="card-text">Celular: <%=item.cel %></p>
-              <p class="card-text">Telefone: <%=item.tel %></p>
-              <p class="card-text">Ramal: <%=item.ramal %></p>
-              <p class="medicoEspec card-text">
-                Especialidade: <%=item.espec %>
-              </p>
-              <p class="container-fluid d-flex justify-content-between">
-                <a href="/view/deletar/<%= item._id %>" class="btn btn-danger">
-                  <i class="bi bi-trash-fill"></i>
-                  Eliminar
-                </a>
-                <a href="/view/editar/<%= item._id %>" class="btn btn-success">
-                  <i class="bi bi-pen-fill"></i>
-                  Editar
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-=======
     <div class="h1 text-center mt-4 mb-5">Página do administrador</div>
     <!-- Botão de cadastro de novos médicos-->
     <div class="container mb-5">
@@ -130,7 +60,6 @@
             </div>
             <% }) %>
           </div>
->>>>>>> 8270f4defe19b0fed373d7ff6b287ffb5625de73
       </div>
       <% }) %>
     </div>
